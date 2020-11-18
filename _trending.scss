@@ -1,0 +1,42 @@
+.trending{
+    background-color: $backgrey;
+    padding: 46px 0 82px 0;
+    text-align: center;
+}
+
+.trending h2{
+    margin-bottom: 7px;
+    font-family: $mont;
+    font-size: 20px;
+    line-height: 30px;
+    color: $mainviolet;
+}
+
+.trending p{
+    margin-bottom: 32px;
+    font-family: $roboto;
+    font-size: 16px;
+    color: black;
+    line-height: 23px;
+    margin: 0 25px 0 25px;
+}
+
+
+@media screen and (min-width: 769px){
+    .trending{
+        padding: 67px 0 182px 0;
+    }
+
+    .trending h2{
+        margin-bottom: 12px;
+        font-size: 25px;
+    }
+
+    .trending p{
+        margin-bottom: 53px;
+        font-size: 18px;
+        color: black;
+    }
+}
+
+

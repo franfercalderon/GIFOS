@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GifOS</title>
+</head>
+<body class="">    
+    <header class="header">
+        <div class="topBar"></div>
+        <div class="logoDiv">
+            <img src="images/assets/logo-mobile.svg" alt="logo GIFOS" class="logo">
+            <!-- <img src="images/assets/logo-desktop.svg" alt="logo GIFOS" id="logoDesktop> -->
+        </div>
+        <div class="mobileNav">
+            <img src="images/assets/burger.svg" alt="Icono menú" class="menuIcon" id="menuIcon">
+            <img src="images/assets/close.svg" alt="Icono menú" class="menuClose hidden" id="menuClose">
+            <ul class="mobileUl hidden">
+                <li class="switchDarkMobile">Modo Nocturno</li>
+                <span class="sep"></span>
+                <li>Favoritos</li>
+                <span class="sep"></span>
+                <li>Mis GIFOS</li>
+                <span class="sep"></span>
+            </ul>
+        </div>
+        <nav class="desktopNav">
+            <ul class="desktopUl">
+                <li class="switchDarkDesktop">MODO NOCTURNO</li>
+                <li>FAVORITOS</li>
+                <li>MIS GIFOS</li>
+            </ul>
+            <div class="newGifoDiv">
+                <img src="images/assets/button-crear-gifo.svg" alt="botón crear gif" class="newGifoBtn">
+                <img src="images/assets/CTA-crear-gifo-hover.svg" alt="botón crear gif" class="newGifoBtnHover">
+            </div>
+        </nav>
+    </header>
+    <section class="main">
+        <div class="titleContainer">
+            <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
+        </div>
+        <img src="images/assets/ilustra_header.svg" alt="ilustración buscador" class="titleImg">
+        <div class="search">
+            <input type="text" class="searchinput" placeholder="Busca GIFOS y más">
+            <img src="images/assets/icon-search.svg" alt="ícono búsqueda">
+        </div>
+        <div class="mainTrending">
+            <h2>Trending:</h2>
+            <div>
+                <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+            </div>
+        </div>
+    </section>
+    <section class="trending">
+        <div class="trendingTitle">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="footerDiv">
+            <p class="share">Compartir en:</p>
+            <div class="socialContainer">
+                <img src="images/assets/icon_facebook.svg" alt="logo Facebook" class="socialLogo">
+                <img src="images/assets/icon-twitter.svg" alt="logo Twitter" class="socialLogo">
+                <img src="images/assets/icon_instagram.svg" alt="logo Instagram" class="socialLogo">
+            </div>
+        </div>
+        <p class="rights">© GIFOS 2020 All Rights Reserved.</p>
+        <div class="btmBar"></div>
+    </footer>
+    <script src="var.js"></script>
+    <script src="functions.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

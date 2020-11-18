@@ -1,0 +1,144 @@
+.header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-family: $mont;
+}
+
+.topBar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5px;
+    background-color: $mainviolet;
+}
+
+@keyframes fadeIn {
+    from { top: -100vh;
+           opacity: 0; 
+    }
+      to { top: 100px; 
+           opacity: 0.9;
+    }
+}
+
+.mobileUl{
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.4s;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 0px;
+    list-style: none;
+    width: 100%;
+    height: 100vh;
+    background-color: $mainviolet; opacity: 0.9;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+}
+
+.mobileUl li{
+    margin-top: 17px;
+}
+
+.sep{
+    margin-top: 10px;
+    width: 41px;
+    height: 0.1px;
+    background-color: white; opacity: 0.5;
+}
+
+.logo{
+    margin-left: 22px;
+}
+
+.menuIcon{
+    margin-right: 26px;
+}
+
+.desktopNav{
+    margin-right: 156px;
+    display: flex;
+    align-items: center;
+}
+
+.desktopUl{
+    display: inline-flex;
+    list-style: none;
+}
+
+.desktopUl li{
+    margin-right: 52px;
+    font-weight: 700;
+    color: $mainviolet;
+}
+
+.desktopUl li:hover{
+    border-bottom: 3px solid $maingreen;
+    display: inline-block;
+    line-height: 1;
+}
+
+.desktopUl li:active{
+    color: $maingrey;
+    border-bottom: none;
+}
+
+.newGifoDiv{
+    position: relative;
+}
+
+.newGifoDiv img{
+    position: relative;
+    display: inline-block;
+}
+
+.newGifoDiv :nth-child(2){
+    position: absolute;
+    right: 0;
+    opacity: 0;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);
+        opacity: 0;
+    }
+    to {transform:rotate(360deg);
+    opacity: 1;
+    }
+}
+
+.newGifoBtnHover:hover{
+    animation: spin 0.5s;
+    opacity: 1;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+
+    .desktopNav{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px){
+    .mobileNav{
+        display: none;
+    }
+    .logo{
+        width: 68px;
+        height: 60px;
+        margin-left: 156px;
+        margin-top: 10px;
+    }
+    
+}
