@@ -8,6 +8,9 @@ const igLogo= document.querySelectorAll(".socialLogo")[2];
 const body=document.body;
 const switchDarkMobile= document.querySelector(".switchDarkMobile");
 const switchDarkDesktop=document.querySelector(".switchDarkDesktop");
+const mainLogo= document.querySelector(".logo");
+const newLogo= document.querySelector(".newGifoBtn");
+const searchIcon= document.querySelector(".searchIcon");
 
 //VARIABLES
 

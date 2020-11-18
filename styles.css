@@ -13,11 +13,6 @@
   outline: none;
 }
 
-body, h1, h2, h3, h4, h5, p, span, a {
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-}
-
 .header {
   position: relative;
   display: -webkit-box;
@@ -298,8 +293,12 @@ input {
     padding-bottom: 95px;
   }
   .titleContainer {
-    max-width: 450px;
+    max-width: 600px;
     padding: 76px 0 24px 0;
+  }
+  .main h1 {
+    font-size: 40px;
+    font-weight: 600;
   }
   .titleImg {
     width: 399px;
@@ -307,6 +306,7 @@ input {
   input {
     width: 551px;
     max-width: 551px;
+    font-size: 16px;
   }
   .mainTrending h2 {
     margin-top: 73px;
@@ -442,7 +442,7 @@ footer {
   }
 }
 
-body, h1, h2, h3, h4, h5, p, span, a {
+h1, h2, h3, h4, h5, p, span, a {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
@@ -453,5 +453,22 @@ body.dark {
 
 body.dark .header .topBar {
   background-color: black;
+}
+
+body.dark .header .mobileNav .mobileUl {
+  background-color: black;
+}
+
+body.dark .header .desktopNav .desktopUl li {
+  color: white;
+}
+
+body.dark .main .titleContainer h1 {
+  color: white;
+}
+
+body.dark .main .search input {
+  border: 1px solid white;
+  background: #37383C;
 }
 /*# sourceMappingURL=styles.css.map */

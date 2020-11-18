@@ -26,13 +26,17 @@ function enableDark(){
     if(darkStatus==false){
         console.log("Oh, it's getting dark..");
         //CAMBIO DE SRC DE ELEMENTOS
-
+        mainLogo.src= "./images/assets/logo-mobile-modo-noct.svg";
+        newLogo.src= "./images/assets/CTA-crear-gifo-modo-noc.svg";
+        searchIcon.src= "./images/assets/icon-search-mod-noc.svg";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
     }else{
         console.log("Sun is up!");
         //CAMBIO DE SRC DE ELEMENTOS
-
+        mainLogo.src="images/assets/logo-mobile.svg";
+        newLogo.src= "./images/assets/button-crear-gifo.svg";
+        searchIcon.src= "./images/assets/icon-search.svg";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
     }

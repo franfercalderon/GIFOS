@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, p, span, a{
+h1, h2, h3, h4, h5, p, span, a{
     transition: 0.4s ease-in-out;
 }
 
@@ -10,3 +10,19 @@ body.dark .header .topBar{
     background-color: black;
 }
 
+body.dark .header .mobileNav .mobileUl{
+    background-color: black;
+}
+
+body.dark .header .desktopNav .desktopUl li{
+    color:white;
+}
+
+body.dark .main .titleContainer h1{
+    color: white;
+}
+
+body.dark .main .search input{
+    border: 1px solid white;
+    background: $darkbody;
+}

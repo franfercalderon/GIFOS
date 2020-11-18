@@ -73,8 +73,13 @@ input{
     }
     
     .titleContainer{
-        max-width: 450px;
+        max-width: 600px;
         padding: 76px 0 24px 0;
+    }
+
+    .main h1{
+        font-size: 40px;
+        font-weight: 600;
     }
 
     .titleImg{
@@ -84,6 +89,7 @@ input{
     input{
         width: 551px;
         max-width: 551px;
+        font-size: 16px;
     }
 
     .mainTrending h2{
