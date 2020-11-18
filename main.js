@@ -1,6 +1,5 @@
 menuBtn.addEventListener("click", desplegarMenu);
 switchDarkDesktop.addEventListener("click", enableDark);
-// switchDarkMobile.addEventListener("click", enableDark);
 switchDarkMobile.addEventListener("click", ()=>{
     enableDark(); 
     if(darkStatus==false){

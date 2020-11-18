@@ -13,6 +13,11 @@
   outline: none;
 }
 
+body, h1, h2, h3, h4, h5, p, span, a {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -437,7 +442,16 @@ footer {
   }
 }
 
+body, h1, h2, h3, h4, h5, p, span, a {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
 body.dark {
   background-color: #37383C;
+}
+
+body.dark .header .topBar {
+  background-color: black;
 }
 /*# sourceMappingURL=styles.css.map */

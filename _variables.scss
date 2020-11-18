@@ -10,6 +10,10 @@
     outline: none;
 }
 
+body, h1, h2, h3, h4, h5, p, span, a{
+    transition: 0.4s ease-in-out;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;800&family=Roboto:wght@100;300;400;500;700&display=swap');
 

@@ -1,9 +1,12 @@
-// body, h1, h2, h3, h4, h5, p, span, a{
-//     transition: 0.4s ease-in-out;
-// }
+body, h1, h2, h3, h4, h5, p, span, a{
+    transition: 0.4s ease-in-out;
+}
 
 body.dark{
     background-color: $darkbody;
-    // transition: 0.2s ease;
+}
+
+body.dark .header .topBar{
+    background-color: black;
 }
 
