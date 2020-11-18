@@ -339,6 +339,7 @@ input {
   margin-bottom: 32px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   color: black;
   line-height: 23px;
   margin: 0 25px 0 25px;
@@ -470,5 +471,29 @@ body.dark .main .titleContainer h1 {
 body.dark .main .search input {
   border: 1px solid white;
   background: #37383C;
+}
+
+body.dark .main .mainTrending {
+  color: white;
+}
+
+body.dark .trending {
+  background-color: #222326;
+}
+
+body.dark .trending h2 {
+  color: white;
+}
+
+body.dark .trending p {
+  color: white;
+}
+
+body.dark footer {
+  color: white;
+}
+
+body.dark footer .btmBar {
+  background-color: black;
 }
 /*# sourceMappingURL=styles.css.map */

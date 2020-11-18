@@ -26,3 +26,27 @@ body.dark .main .search input{
     border: 1px solid white;
     background: $darkbody;
 }
+
+body.dark .main .mainTrending {
+    color: white;
+}
+
+body.dark .trending{
+    background-color: $darktrending;
+}
+
+body.dark .trending h2{
+    color: white;
+}
+
+body.dark .trending p{
+    color: white;
+}
+
+body.dark footer{
+    color: white;
+}
+
+body.dark footer .btmBar{
+    background-color: black;
+}
