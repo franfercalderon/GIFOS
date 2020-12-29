@@ -11,6 +11,10 @@ const switchDarkDesktop=document.querySelector(".switchDarkDesktop");
 const mainLogo= document.querySelector(".logo");
 const newLogo= document.querySelector(".newGifoBtn");
 const searchIcon= document.querySelector(".searchIcon");
+const mainSec= document.querySelector(".main");
+const favSec= document.querySelector(".favsec");
+const mygifosSec= document.querySelector(".mygifossec");
+const maxSec= document.querySelector(".maxsec");
 
 //VARIABLES
 
