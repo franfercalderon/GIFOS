@@ -15,6 +15,7 @@ const mainSec= document.querySelector(".main");
 const favSec= document.querySelector(".favsec");
 const mygifosSec= document.querySelector(".mygifossec");
 const maxSec= document.querySelector(".maxsec");
+const favButton=document.querySelector("#favbtn");
 
 //VARIABLES
 

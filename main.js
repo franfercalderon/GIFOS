@@ -58,6 +58,16 @@ igLogo.addEventListener("mouseout", ()=>{
     }
 })
 
+//MUESTRA SECCION DE FAVORITOS
+favButton.addEventListener("click", ()=>{
+    console.log("hola");
+    mainSec.classList.add("hidden");
+    favSec.classList.remove("hidden");
+    mygifosSec.classList.add("hidden");
+    maxSec.classList.add("hidden");
+
+} )
+
 
 
 
