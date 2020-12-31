@@ -1,11 +1,15 @@
 .main{
-    display: inline-block;
+    display: flex;
     flex-direction: column;
     align-items: center;
     font-family: $mont;
     text-align: center;
     padding: 0 15px 45px 15px;
     color: $mainviolet;
+}
+
+.hidden{
+display: none;
 }
 
 .titleContainer{
