@@ -49,4 +49,23 @@ function enableDark(){
     }
 }
 
+//  MOSTRAR SECTION FAVORITOS
+function openFavSec(){
+    mainSec.classList.add("hidden");
+    favSec.classList.remove("hidden");
+    mygifosSec.classList.add("hidden");
+    maxSec.classList.add("hidden");
+    //CIERRA MENÚ HAMBURGUESA
+    if(menuOpen=true){
+        mobileUl.classList.toggle("hidden");
+        menuOpen=false;
+    }
+    //CHEQUEA DARK MODE
+    if(darkStatus==false){
+        menuBtn.src="./images/assets/burger.svg";
+    }else{
+        menuBtn.src="./images/assets/burgerdark.svg";
+    }
+}
+
 
