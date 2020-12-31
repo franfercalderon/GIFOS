@@ -59,7 +59,7 @@ igLogo.addEventListener("mouseout", ()=>{
 })
 
 //MOSTRAR SECCIÓN PRINCIPAL
-
+document.querySelector(".logo").addEventListener("click", openMain);
 
 //MUESTRA SECCION DE FAVORITOS
 document.querySelector(".favbtnmobile").addEventListener("click", openFavSec);

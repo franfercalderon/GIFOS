@@ -68,4 +68,10 @@ function openFavSec(){
     }
 }
 
-
+function openMain(){
+    mainSec.classList.remove("hidden");
+    favSec.classList.add("hidden");
+    mygifosSec.classList.add("hidden");
+    maxSec.classList.add("hidden");
+    
+}
