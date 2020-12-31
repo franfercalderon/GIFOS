@@ -13,6 +13,60 @@
   outline: none;
 }
 
+h1, h2, h3, h4, h5, p, span, a {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+body.dark {
+  background-color: #37383C;
+}
+
+body.dark .header .topBar {
+  background-color: black;
+}
+
+body.dark .header .mobileNav .mobileUl {
+  background-color: black;
+}
+
+body.dark .header .desktopNav .desktopUl li {
+  color: white;
+}
+
+body.dark .main .titleContainer h1 {
+  color: white;
+}
+
+body.dark .main .search input {
+  border: 1px solid white;
+  background: #37383C;
+}
+
+body.dark .main .mainTrending {
+  color: white;
+}
+
+body.dark .trending {
+  background-color: #222326;
+}
+
+body.dark .trending h2 {
+  color: white;
+}
+
+body.dark .trending p {
+  color: white;
+}
+
+body.dark footer {
+  color: white;
+}
+
+body.dark footer .btmBar {
+  background-color: black;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -450,57 +504,36 @@ footer {
   }
 }
 
-h1, h2, h3, h4, h5, p, span, a {
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
+.favtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body.dark {
-  background-color: #37383C;
+.favlogo {
+  margin: 5px 0 7px 0;
+  width: 28px;
 }
 
-body.dark .header .topBar {
-  background-color: black;
+.favtitle h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #572EE5;
+  font-size: 20px;
 }
 
-body.dark .header .mobileNav .mobileUl {
-  background-color: black;
-}
-
-body.dark .header .desktopNav .desktopUl li {
-  color: white;
-}
-
-body.dark .main .titleContainer h1 {
-  color: white;
-}
-
-body.dark .main .search input {
-  border: 1px solid white;
-  background: #37383C;
-}
-
-body.dark .main .mainTrending {
-  color: white;
-}
-
-body.dark .trending {
-  background-color: #222326;
-}
-
-body.dark .trending h2 {
-  color: white;
-}
-
-body.dark .trending p {
-  color: white;
-}
-
-body.dark footer {
-  color: white;
-}
-
-body.dark footer .btmBar {
-  background-color: black;
+@media screen and (min-width: 769px) {
+  .favlogo {
+    margin: 11px 0 8px 0;
+  }
+  .favtitle h2 {
+    font-size: 25px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
