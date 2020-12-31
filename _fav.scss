@@ -15,6 +15,36 @@
     font-size: 20px;
 }
 
+.nofav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.nofavlogo{
+    margin: 90px 0 20px 0;
+    width: 130px;
+}
+
+.nofav h3{
+    font-family: $mont;
+    font-size: 18px;
+    color: $maingreen;
+    width: 70%;
+    text-align: center;
+}
+
+
+// .favcontainer{
+//     display: grid;
+//     grid-template-columns: minmax(1fr, 584px) minmax(1fr, 584px);
+//     grid-template-rows: 1fr fit-content(232px) 1fr fit-content(232px) ;
+//     gap: 72px 72px;
+//     align-content:center;
+//     justify-content:center;
+// }
+
 @media screen and (min-width: 769px){
     .favlogo{
         margin: 11px 0 8px 0;
@@ -22,4 +52,17 @@
     .favtitle h2{
         font-size: 25px;
     }
+    .nofav{
+        margin-bottom: 137px;
+    }
+
+    .nofavlogo{
+        margin: 109px 0 24px 0;
+        width: 150px;
+    }
+    .nofav h3{
+        font-size: 22px;
+        width: 431px;
+    }
+
 }
