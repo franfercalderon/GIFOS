@@ -30,6 +30,8 @@ function enableDark(){
         mainLogo.src= "./images/assets/logo-mobile-modo-noct.svg";
         newLogo.src= "./images/assets/CTA-crear-gifo-modo-noc.svg";
         searchIcon.src= "./images/assets/icon-search-mod-noc.svg";
+        // document.querySelector(".leftslider").src="./images/assets/button-slider-left-md-noct.svg";
+        leftArrow.src="./images/assets/button-slider-left-md-noct.svg";
         fbLogo.src="./images/assets/icon_facebook_noc.svg";
         twLogo.src="./images/assets/icon_twitter_noc.svg";
         igLogo.src="./images/assets/icon_instagram_noc.svg";
@@ -73,5 +75,5 @@ function openMain(){
     favSec.classList.add("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
-    
+
 }

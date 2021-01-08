@@ -19,7 +19,29 @@
     font-weight: 400;
     color: black;
     line-height: 23px;
-    margin: 0 25px 0 25px;
+    margin: 0 25px 32px 25px;
+}
+
+.arrow{
+    display: none;
+}
+
+.carouselcontainer{
+    display: flex;
+    height: 187px;
+    // background-color: black;
+}
+
+.trendingcontainer{
+    width: 100%;
+    padding: 0 22px 0 22px;
+    border: red 1px solid;
+}
+
+.placeholderdiv{
+    background-color: white;
+    height: 187px;
+    width: 100px;
 }
 
 
@@ -37,6 +59,22 @@
         margin-bottom: 53px;
         font-size: 18px;
         color: black;
+    }
+
+    .arrow{
+        display: inline;
+    }
+
+    .carouselcontainer{
+        justify-content: space-between;
+        padding: 0px 92px 0px 92px;
+        height: 275px;
+        align-items: center;
+    }
+    .placeholderdiv{
+        background-color: white;
+        height: 275px;
+        width: auto;
     }
 }
 
