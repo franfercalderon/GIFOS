@@ -36,12 +36,19 @@
     width: 100%;
     padding: 0 22px 0 22px;
     border: red 1px solid;
+    display: inline-block;
+    overflow: scroll;
 }
 
 .placeholderdiv{
     background-color: white;
     height: 187px;
-    width: 100px;
+    width: 243px;
+    margin-right: 22px;
+}
+
+.trendingcontainer :last-child{
+    margin-right: 0px;
 }
 
 
@@ -72,9 +79,9 @@
         align-items: center;
     }
     .placeholderdiv{
-        background-color: white;
         height: 275px;
-        width: auto;
+        width: 357px;
+        margin-right: 25px;
     }
 }
 
