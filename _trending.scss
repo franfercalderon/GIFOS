@@ -51,6 +51,18 @@
     margin-right: 0px;
 }
 
+.tagspan{
+    text-transform: capitalize;
+}
+
+.tags::after{
+    content: ", ";
+}
+
+.tags:last-of-type::after{
+    display: none;
+}
+
 
 @media screen and (min-width: 769px){
     .trending{

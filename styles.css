@@ -436,6 +436,18 @@ input {
   margin-right: 0px;
 }
 
+.tagspan {
+  text-transform: capitalize;
+}
+
+.tags::after {
+  content: ", ";
+}
+
+.tags:last-of-type::after {
+  display: none;
+}
+
 @media screen and (min-width: 769px) {
   .trending {
     padding: 67px 0 182px 0;

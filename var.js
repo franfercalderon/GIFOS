@@ -17,7 +17,9 @@ const mygifosSec= document.querySelector(".mygifossec");
 const maxSec= document.querySelector(".maxsec");
 const favBtnMobile=document.querySelector('favbtn');
 const favBtnDesktop=document.querySelector('favbtn');
-const leftArrow=document.querySelector(".leftslider");
+// const leftArrow=document.querySelector(".leftslider");
+const trendingTags=document.querySelector(".tagspan");
+const searchBar=document.querySelector(".searchinput");
 
 //VARIABLES
 

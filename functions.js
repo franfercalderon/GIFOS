@@ -79,3 +79,29 @@ function openMain(){
     maxSec.classList.add("hidden");
 
 }
+
+async function trendingTagsFn(){
+    await fetch(apiTrengingTagsEP + "?api_key=" + apiKey)
+        .then(response=>{
+            return(response.json())
+        })
+        .then(json=>{
+            console.log(json)
+            fillTags(json.data)
+        })
+
+}
+
+function fillTags(array){
+    //BORRA EL PLACEHOLDER
+    trendingTags.innerHTML= "";
+    //CREA LOS ELEMENTOS
+    for(let i=0; i<5; i++){
+        let tag=document.createElement("span");
+        tag.classList.add("tags");
+        tag.innerHTML= array[i];
+        trendingTags.appendChild(tag);
+    }
+    //GENERATE TAG LISTENERS
+
+}

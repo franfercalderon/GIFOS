@@ -1,3 +1,7 @@
+//COMPLETA LAS TRENDING TAGS
+trendingTagsFn();
+
+
 //DESPLEGAR MENU MOBILE
 menuBtn.addEventListener("click", desplegarMenu);
 
@@ -65,7 +69,6 @@ document.querySelector(".logo").addEventListener("click", openMain);
 document.querySelector(".favbtnmobile").addEventListener("click", openFavSec);
 document.querySelector(".favbtndesktop").addEventListener("click", openFavSec);
 
-//
 
 
 
