@@ -86,8 +86,11 @@ async function trendingTagsFn(){
             return(response.json())
         })
         .then(json=>{
-            console.log(json)
+            // console.log(json)
             fillTags(json.data)
+        })
+        .catch(err=>{
+            console.log(err)
         })
 
 }
@@ -105,3 +108,31 @@ function fillTags(array){
     //GENERATE TAG LISTENERS
 
 }
+
+function fillSearchSuggestions(array){
+    autocompleteUL.classList.remove("hidden");
+    autocompleteUL.innerHTML = "";
+    searchBar.style.borderRadius = "27px 27px 0 0";
+    searchBar.style.borderBottom = "none";
+    for(let i = 0; i<5; i++){
+        let li=document.createElement("li");
+        li.innerHTML=`<img src="images/assets/icon-search.svg"><p>${array[i].title}</p>`
+        autocompleteUL.appendChild(li);
+    }
+    
+
+}
+
+async function suggest(input){
+    await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 5 + "&rating=g")
+        .then(res=>{return(res.json())})
+        .then(json=>{
+            console.log(json)
+            fillSearchSuggestions(json.data)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+}
+
+

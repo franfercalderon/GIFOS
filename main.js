@@ -1,6 +1,9 @@
 //COMPLETA LAS TRENDING TAGS
 trendingTagsFn();
 
+//SEARCHBAR
+searchBar.addEventListener("input", ()=>{suggest(searchBar.value)});
+
 
 //DESPLEGAR MENU MOBILE
 menuBtn.addEventListener("click", desplegarMenu);
