@@ -109,16 +109,53 @@ function fillTags(array){
 
 }
 
-function fillSearchSuggestions(array){
-    autocompleteUL.classList.remove("hidden");
-    autocompleteUL.innerHTML = "";
-    searchBar.style.borderRadius = "27px 27px 0 0";
-    searchBar.style.borderBottom = "none";
-    for(let i = 0; i<5; i++){
-        let li=document.createElement("li");
-        li.innerHTML=`<img src="images/assets/icon-search.svg"><p>${array[i].title}</p>`
-        autocompleteUL.appendChild(li);
+function hideSearch(){
+    searchBar.style.borderRadius = "27px";
+    if (darkStatus==true){
+        searchBar.style.borderBottom= "1pt solid white";
     }
+    if (darkStatus==false){
+        searchBar.style.borderBottom= "1pt solid #572EE5";
+    }
+    autocompletecontainer.classList.add("hidden");
+}
+
+// if(searchBar.value == ""){
+//     hideSearch();
+//     console.log("egra")
+// }
+
+// function searchBarReset(){
+//     if (searchBar.value == ""){
+//         console.log("empty");
+//     }
+// }
+
+function fillSearchSuggestions(array){
+    if (searchBar.value.length == 0){
+        hideSearch();
+    }
+    else{
+        autocompletecontainer.classList.remove("hidden");
+        autocompleteUL.innerHTML = "";
+        searchBar.style.borderRadius = "27px 27px 0 0";
+        searchBar.style.borderBottom = "none";
+        for(let i = 0; i<5; i++){
+            let li=document.createElement("li");
+            li.innerHTML=`<img src="images/assets/icon-search.svg"><p>${array[i].title}</p>`
+            autocompleteUL.appendChild(li);
+            li.addEventListener("click", ()=>{
+                searchBar.value= array[i].title;
+                hideSearch();
+        })
+    }
+    }
+    
+    
+    // if (searchBar.value.lenght == 0){
+    //     console.log("empty");
+    // }
+    // searchBarReset();
     
 
 }

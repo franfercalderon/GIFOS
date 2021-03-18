@@ -67,6 +67,19 @@ body.dark footer .btmBar {
   background-color: black;
 }
 
+body.dark .autocomplete {
+  border: 1pt solid white;
+  border-top: none;
+}
+
+body.dark .autocomplete li {
+  color: #9CAFC3;
+}
+
+body.dark .search input {
+  color: white;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -310,6 +323,10 @@ h1 span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -349,6 +366,40 @@ input {
   line-height: 25px;
 }
 
+.autocomplete {
+  border: 1pt solid #572EE5;
+  width: 300px;
+  border-top: none;
+  border-radius: 0 0 27px 27px;
+  list-style: none;
+}
+
+.autocomplete li {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 10px;
+}
+
+li img {
+  position: absolute;
+  left: 23px;
+  top: 0px;
+  vertical-align: text-bottom;
+}
+
+.autocomplete li:first-child {
+  padding-top: 24px;
+}
+
+.autocomplete li:last-child {
+  padding-bottom: 18px;
+}
+
+.autocomplete li p {
+  display: inline;
+  padding-left: 1rem;
+}
+
 @media screen and (min-width: 769px) {
   .main {
     padding-bottom: 95px;
@@ -380,6 +431,13 @@ input {
   .mainTrending div p {
     font-size: 16px;
   }
+  .autocomplete {
+    width: 551px;
+  }
+}
+
+.prueba {
+  display: inline;
 }
 
 .trending {

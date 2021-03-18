@@ -21,6 +21,7 @@ const favBtnDesktop=document.querySelector('favbtn');
 const trendingTags=document.querySelector(".tagspan");
 const searchBar=document.querySelector(".searchinput");
 const autocompleteUL= document.querySelector(".autocomplete");
+const autocompletecontainer= document.querySelector(".autocompletecontainer");
 
 //VARIABLES
 
