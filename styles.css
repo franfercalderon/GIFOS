@@ -333,10 +333,18 @@ h1 span {
           align-items: center;
 }
 
-.search img {
+.searchicon {
   position: absolute;
   top: 15px;
   right: 20px;
+  z-index: 1;
+}
+
+.closesearch {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: -1;
 }
 
 input {

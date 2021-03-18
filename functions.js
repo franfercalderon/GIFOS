@@ -33,8 +33,8 @@ function enableDark(){
         fbLogo.src="./images/assets/icon_facebook_noc.svg";
         twLogo.src="./images/assets/icon_twitter_noc.svg";
         igLogo.src="./images/assets/icon_instagram_noc.svg";
-        document.querySelector(".leftslider").src="./images/assets/button-slider-left-md-noct.svg"
-        document.querySelector(".rightslider").src="./images/assets/button-slider-right-md-noct.svg"
+        document.querySelector(".leftslider").src="./images/assets/button-slider-left-md-noct.svg";
+        document.querySelector(".rightslider").src="./images/assets/button-slider-right-md-noct.svg";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
     }else{
@@ -46,8 +46,8 @@ function enableDark(){
         fbLogo.src="./images/assets/icon_facebook.svg";
         twLogo.src="./images/assets/icon-twitter.svg";
         igLogo.src="./images/assets/icon_instagram.svg";
-        document.querySelector(".leftslider").src="./images/assets/button-slider-left.svg"
-        document.querySelector(".rightslider").src="./images/assets/Button-Slider-right.svg"
+        document.querySelector(".leftslider").src="./images/assets/button-slider-left.svg";
+        document.querySelector(".rightslider").src="./images/assets/Button-Slider-right.svg";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
     }
@@ -111,25 +111,18 @@ function fillTags(array){
 
 function hideSearch(){
     searchBar.style.borderRadius = "27px";
+    closeSearch.style.zIndex= "-1";
+    searchIcon.style.left= "";
     if (darkStatus==true){
         searchBar.style.borderBottom= "1pt solid white";
+        // searchIcon.src= "./images/assets/icon-search-mod-noc.svg";
     }
     if (darkStatus==false){
         searchBar.style.borderBottom= "1pt solid #572EE5";
+        // searchIcon.src= "./images/assets/icon-search.svg";
     }
     autocompletecontainer.classList.add("hidden");
 }
-
-// if(searchBar.value == ""){
-//     hideSearch();
-//     console.log("egra")
-// }
-
-// function searchBarReset(){
-//     if (searchBar.value == ""){
-//         console.log("empty");
-//     }
-// }
 
 function fillSearchSuggestions(array){
     if (searchBar.value.length == 0){
@@ -140,6 +133,11 @@ function fillSearchSuggestions(array){
         autocompleteUL.innerHTML = "";
         searchBar.style.borderRadius = "27px 27px 0 0";
         searchBar.style.borderBottom = "none";
+        searchIcon.style.left= "24px";
+        closeSearch.style.zIndex= "2";
+        closeSearch.addEventListener("click", ()=>{
+            hideSearch();
+        })
         for(let i = 0; i<5; i++){
             let li=document.createElement("li");
             li.innerHTML=`<img src="images/assets/icon-search.svg"><p>${array[i].title}</p>`
@@ -150,14 +148,6 @@ function fillSearchSuggestions(array){
         })
     }
     }
-    
-    
-    // if (searchBar.value.lenght == 0){
-    //     console.log("empty");
-    // }
-    // searchBarReset();
-    
-
 }
 
 async function suggest(input){
