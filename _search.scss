@@ -1,0 +1,36 @@
+.searchresults{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.searchresults h2{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-family: $mont;
+
+}
+
+.resultsgifocontainer{
+    padding: 38px 0 78px 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+.gifcontainer{
+    display: inline;
+    position: relative;
+    width: fit-content;
+    margin: 12px;
+
+}
+
+.gifcontainer img{
+    width: 156px;
+    height: 120px;
+}

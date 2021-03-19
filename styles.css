@@ -700,4 +700,50 @@ footer {
     width: 431px;
   }
 }
+
+.searchresults {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.searchresults h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.resultsgifocontainer {
+  padding: 38px 0 78px 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gifcontainer {
+  display: inline;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 12px;
+}
+
+.gifcontainer img {
+  width: 156px;
+  height: 120px;
+}
 /*# sourceMappingURL=styles.css.map */
