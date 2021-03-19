@@ -9,7 +9,8 @@
         "_main.scss",
         "_trending.scss",
         "_footer.scss",
-        "_fav.scss"
+        "_fav.scss",
+        "search.scss"
     ],
     "names": [],
     "file": "styles.css"

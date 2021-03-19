@@ -72,6 +72,10 @@ document.querySelector(".logo").addEventListener("click", openMain);
 document.querySelector(".favbtnmobile").addEventListener("click", openFavSec);
 document.querySelector(".favbtndesktop").addEventListener("click", openFavSec);
 
+//BUSQUEDA ON CLICK LOGO LUPA
+
+
+
 
 
 
