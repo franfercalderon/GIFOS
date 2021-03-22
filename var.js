@@ -23,8 +23,11 @@ const trendingTags=document.querySelector(".tagspan");
 const searchBar=document.querySelector(".searchinput");
 const autocompleteUL= document.querySelector(".autocomplete");
 const autocompletecontainer= document.querySelector(".autocompletecontainer");
+const searchResults= document.querySelector(".searchresults");
 
 //VARIABLES
 
 var menuOpen= false;
 var darkStatus= false;
+var prevOffset= 0;
+var iterations = 0;

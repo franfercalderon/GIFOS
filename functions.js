@@ -115,13 +115,12 @@ function hideSearch(){
     searchIcon.style.left= "";
     if (darkStatus==true){
         searchBar.style.borderBottom= "1pt solid white";
-        // searchIcon.src= "./images/assets/icon-search-mod-noc.svg";
     }
     if (darkStatus==false){
         searchBar.style.borderBottom= "1pt solid #572EE5";
-        // searchIcon.src= "./images/assets/icon-search.svg";
     }
     autocompletecontainer.classList.add("hidden");
+    // searchResults.classList.add("hidden");
 }
 
 function fillSearchSuggestions(array){
@@ -160,6 +159,36 @@ async function suggest(input){
         .catch(err=>{
             console.log(err)
         })
+}
+
+
+
+async function search(input){
+    //LLAMADA A API
+    await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 12 + "&offset=" + (prevOffset+1) + "&rating=g")
+    .then(res=>{return(res.json())})
+    .then(json=>{
+        console.log(json)
+
+    })
+}
+
+function doSearch(){
+    if(searchBar != ""){
+        //POSICIONAR EN SECCIÓN
+        searchResults.scrollIntoView()
+        //RESET
+        iterations= 0;
+        prevOffset=0;
+        //ARRAY DE RESULTADOS
+        gifoResults= [];
+        //MOSTRAR SECCION DE RESULTADOS
+        searchResults.classList.remove("hidden");
+        //LLAMADO API
+        search(searchBar.value);
+        //ESCONDE SUGERENCIAS
+        hideSearch();
+    }
 }
 
 
