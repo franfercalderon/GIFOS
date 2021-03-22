@@ -161,6 +161,54 @@ async function suggest(input){
         })
 }
 
+function renderSearch(array, input){
+    //SI ES LA PRIMERA BÚSQUEDA
+    if(prevOffset==0){
+        //RESET
+        searchResults.innerHTML="";
+        gifoResults=[];
+        //CREAR LINEA
+        line= document.createElement("div");
+        line.classList.add("divline");
+        searchResults.appendChild(line);
+        //CREA H2
+        h2= document.createElement("h2");
+        h2.innerHTML=input;
+        searchResults.appendChild(h2);
+        //CREA DIV CONTENEDOR
+        containerDiv= document.createElement("div");
+        containerDiv.classList.add("resultsgifocontainer");
+        searchResults.appendChild(containerDiv);
+    }
+    //RENDERIZA GIFOS
+    for(let i=0; i<array.length; i++){
+        gifoDiv=document.createElement("div");
+        gifoDiv.classList.add("gifcontainer");
+        searchResults.appendChild(gifoDiv);
+        img=document.createElement("img");
+        // img.src="images/gifo.gif";
+        img.src=`${array[i].url}`;
+        gifoDiv.appendChild(img);
+
+    }
+
+}
+
+function fillGifoPreview(array, input){
+    //CREA ARRAY DE RESULTADOS DE BUSQUEDA COMO OBJETOS
+    for(let i=0; i<array.length; i++){
+        let newGifo = new GIFO(
+            i+prevOffset,
+            array[i].username,
+            array[i].title,
+            array[i].images.original.url,
+        );
+        gifoResults.push(newGifo);
+    }
+    console.log(gifoResults);
+    //LLAMA FN DE RENDERIZAR
+    renderSearch(array, input);
+}
 
 
 async function search(input){
@@ -168,9 +216,11 @@ async function search(input){
     await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 12 + "&offset=" + (prevOffset+1) + "&rating=g")
     .then(res=>{return(res.json())})
     .then(json=>{
-        console.log(json)
-
+        console.log(json);
+        console.log(input);
+        fillGifoPreview(json.data , input);
     })
+    .catch(err=> console.log(err))
 }
 
 function doSearch(){
@@ -180,7 +230,6 @@ function doSearch(){
         //RESET
         iterations= 0;
         prevOffset=0;
-        //ARRAY DE RESULTADOS
         gifoResults= [];
         //MOSTRAR SECCION DE RESULTADOS
         searchResults.classList.remove("hidden");

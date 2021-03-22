@@ -75,6 +75,29 @@ document.querySelector(".favbtndesktop").addEventListener("click", openFavSec);
 //BUSQUEDA ON CLICK LOGO LUPA
 searchIcon.addEventListener("click",doSearch);
 
+//BUSQUEDA SEARCHBAR CON ENTER
+searchBar.addEventListener("keypress", (input)=>{
+    if(input.charCode ===13){
+        doSearch();
+    }
+})
+
+//GIFO COMO OBJETOS
+function GIFO(index, author, title, url){
+    this.index=index;
+    this.author=author;
+    if(this.author==""){
+        this.author="Unknown";
+    }
+    this.title=title;
+    if(this.title==""){
+        this.title="Untitled";
+    }
+    this.url=url;
+    
+    return this;
+}
+
 
 
 
