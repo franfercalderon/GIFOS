@@ -184,12 +184,10 @@ function renderSearch(array, input){
     for(let i=0; i<array.length; i++){
         gifoDiv=document.createElement("div");
         gifoDiv.classList.add("gifcontainer");
-        searchResults.appendChild(gifoDiv);
+        containerDiv.appendChild(gifoDiv);
         img=document.createElement("img");
-        // img.src="images/gifo.gif";
         img.src=`${array[i].url}`;
         gifoDiv.appendChild(img);
-
     }
 
 }
