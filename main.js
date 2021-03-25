@@ -86,13 +86,13 @@ searchBar.addEventListener("keypress", (input)=>{
 function GIFO(index, author, title, url){
     this.index=index;
     this.author=author;
-    // if(this.author==""){
-    //     this.author="Desconocido";
-    // }
+    if(this.author==""){
+        this.author="Desconocido";
+    }
     this.title=title;
-    // if(this.title==""){
-    //     this.title="Untitled";
-    // }
+    if(this.title==""){
+        this.title="Untitled";
+    }
     this.url=url;
 
     return this;

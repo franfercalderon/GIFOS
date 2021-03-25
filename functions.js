@@ -180,10 +180,7 @@ function renderSearch(array, input){
         let h2= document.createElement("h2");
         h2.innerHTML=input;
         searchResults.appendChild(h2);
-        //CREA DIV CONTENEDOR
-        var containerDiv= document.createElement("div");
-        containerDiv.classList.add("resultsgifocontainer");
-        searchResults.appendChild(containerDiv);
+
         //CREA BOTON VER MAS
         // if(array.length!= 0){
         //     let newButton= document.createElement("button");
@@ -197,15 +194,22 @@ function renderSearch(array, input){
         // searchResults.appendChild(newButton);
     }
     //SI NO SE OBTIENEN RESULTADOS
-    // if(array.length==0){
-    //     let noResLogo= document.createElement("img");
-    //     noResLogo.src="./images/assets/ouch.svg";
+    if(array.length==0){
+        let noResLogo= document.createElement("img");
+        noResLogo.src="./images/assets/ouch.svg";
+        searchResults.appendChild(noResLogo);
+        let noResLegend= document.createElement("h3");
+        noResLegend.innerHTML="Intenta con otra búsqueda";
+        searchResults.appendChild(noResLegend);
+    }
+    else{
+        //CREA DIV CONTENEDOR
+        var containerDiv= document.createElement("div");
+        containerDiv.classList.add("resultsgifocontainer");
+        searchResults.appendChild(containerDiv);
 
-
-    // }
-
-    //RENDERIZA GIFOS
-    for(let i=0; i<array.length; i++){
+        //RENDERIZA GIFOS
+        for(let i=0; i<array.length; i++){
         gifoDiv=document.createElement("div");
         gifoDiv.classList.add("gifcontainer");
         containerDiv.appendChild(gifoDiv);
@@ -213,6 +217,10 @@ function renderSearch(array, input){
         img.src=`${array[i].url}`;
         gifoDiv.appendChild(img);
     }
+    }
+    
+
+    
 
 }
 
@@ -260,6 +268,7 @@ function doSearch(){
         //ESCONDE SUGERENCIAS
         hideSearch();
     }
+
 }
 
 
