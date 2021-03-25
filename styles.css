@@ -728,6 +728,7 @@ footer {
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
   color: #572EE5;
+  text-transform: capitalize;
 }
 
 .resultsgifocontainer {

@@ -160,6 +160,11 @@ async function suggest(input){
             console.log(err)
         })
 }
+// function createButton(){
+//     let newButton= document.createElement("button");
+//     newButton.classList.add("morebtn");
+//     newButton.innerHTML="VER MÁS";
+// }
 
 function renderSearch(array, input){
     //SI ES LA PRIMERA BÚSQUEDA
@@ -168,18 +173,37 @@ function renderSearch(array, input){
         searchResults.innerHTML="";
         gifoResults=[];
         //CREAR LINEA
-        line= document.createElement("div");
+        let line= document.createElement("div");
         line.classList.add("divline");
         searchResults.appendChild(line);
         //CREA H2
-        h2= document.createElement("h2");
+        let h2= document.createElement("h2");
         h2.innerHTML=input;
         searchResults.appendChild(h2);
         //CREA DIV CONTENEDOR
-        containerDiv= document.createElement("div");
+        var containerDiv= document.createElement("div");
         containerDiv.classList.add("resultsgifocontainer");
         searchResults.appendChild(containerDiv);
+        //CREA BOTON VER MAS
+        // if(array.length!= 0){
+        //     let newButton= document.createElement("button");
+        //     newButton.classList.add("morebtn");
+        //     newButton.innerHTML="VER MÁS";
+        //     searchResults.appendChild(newButton);
+        // }
+        // let newButton= document.createElement("button");
+        // newButton.classList.add("morebtn");
+        // newButton.innerHTML="VER MÁS";
+        // searchResults.appendChild(newButton);
     }
+    //SI NO SE OBTIENEN RESULTADOS
+    // if(array.length==0){
+    //     let noResLogo= document.createElement("img");
+    //     noResLogo.src="./images/assets/ouch.svg";
+
+
+    // }
+
     //RENDERIZA GIFOS
     for(let i=0; i<array.length; i++){
         gifoDiv=document.createElement("div");
@@ -195,7 +219,7 @@ function renderSearch(array, input){
 function fillGifoPreview(array, input){
     //CREA ARRAY DE RESULTADOS DE BUSQUEDA COMO OBJETOS
     for(let i=0; i<array.length; i++){
-        let newGifo = new GIFO(
+        var newGifo = new GIFO(
             i+prevOffset,
             array[i].username,
             array[i].title,
@@ -205,7 +229,7 @@ function fillGifoPreview(array, input){
     }
     console.log(gifoResults);
     //LLAMA FN DE RENDERIZAR
-    renderSearch(array, input);
+    renderSearch(gifoResults, input);
 }
 
 
