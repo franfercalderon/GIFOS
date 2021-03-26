@@ -525,6 +525,11 @@ li p {
   display: none;
 }
 
+.tags:hover {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 769px) {
   .trending {
     padding: 67px 0 182px 0;

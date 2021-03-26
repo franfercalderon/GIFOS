@@ -63,7 +63,10 @@
     display: none;
 }
 
-// .tags:hover
+.tags:hover{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
 
 @media screen and (min-width: 769px){
     .trending{
