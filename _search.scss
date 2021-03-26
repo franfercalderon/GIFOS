@@ -87,10 +87,8 @@
     bottom: 0;
     color: white;
     font-family: $roboto;
-    margin: 0 0 10px 8px;
+    padding: 0 8px 10px 8px;
     text-transform: capitalize;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .overlaytitle{
@@ -150,7 +148,7 @@
     }
 
     .overlayp{
-        margin: 0 0 20px 12px;
+        padding: 0 0 20px 12px;
     }
     
     .overlaytitle{

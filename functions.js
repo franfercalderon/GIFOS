@@ -75,7 +75,7 @@ function openFavSec(){
     }else{
         menuBtn.src="./images/assets/burgerdark.svg";
     }
-    showFav();
+    // showFav();
 }
 
 function openMain(){
