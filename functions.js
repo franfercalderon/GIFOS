@@ -120,6 +120,7 @@ function tagListener(){
             let input= searchBar.value=document.querySelectorAll(".tags")[i].innerHTML;
             search(input);
             doSearch();
+            searchResults.scrollIntoView({behavior: 'smooth' });
         })
     }
 }
