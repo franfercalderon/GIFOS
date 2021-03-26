@@ -108,28 +108,15 @@ function fillTags(array){
         tag.classList.add("tags");
         tag.innerHTML= array[i];
         trendingTags.appendChild(tag);
-        // tag.addEventListener("click", ()=>{
-        //     // searchBar.value=array[i];
-        //     search(array[i]);
-            // doSearch();
-            
-        // })
-        // tagListener();
     }
-    tagListener();
     //GENERATE TAG LISTENERS
-    // for(let i=0; i<5; i++){
-    //     document.querySelectorAll(".tags").addEventListener("click", ()=>{
-    //         console.log("CHOTO");
-    //     })
-    // }
-
+    tagListener();
+    
 }
 
 function tagListener(){
     for(let i=0; i<5; i++){
         document.querySelectorAll(".tags")[i].addEventListener("click", ()=>{
-            console.log("choto2")
             let input= searchBar.value=document.querySelectorAll(".tags")[i].innerHTML;
             search(input);
             doSearch();
@@ -148,7 +135,6 @@ function hideSearch(){
         searchBar.style.borderBottom= "1pt solid #572EE5";
     }
     autocompletecontainer.classList.add("hidden");
-    // searchResults.classList.add("hidden");
 }
 
 function fillSearchSuggestions(array){
@@ -181,9 +167,8 @@ function fillSearchSuggestions(array){
             li.addEventListener("click", ()=>{
                 searchBar.value= array[i].title;
                 hideSearch();
-            
-        })
-    }
+            })
+        }
     }
 }
 
