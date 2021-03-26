@@ -63,6 +63,7 @@ function openFavSec(){
     favSec.classList.remove("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
+    searchResults.classList.add("hidden");
     //CIERRA MENÚ HAMBURGUESA
     if(menuOpen=true){
         mobileUl.classList.toggle("hidden");
@@ -240,7 +241,7 @@ function renderSearch(array, input){
         containerDiv.appendChild(gifoDiv);
         gifoDiv.innerHTML=`<img src="${array[i].url} alt="${array[i].title}>
             <!--GENERA OVERLAY-->
-            <div class="overlaygifo ">
+            <div class="overlaygifo hidden">
                 <div class="overlaybuttons">
                     <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
                     <img src="images/assets/icon-download.svg" alt="ícono descargar">
@@ -251,8 +252,59 @@ function renderSearch(array, input){
                     <p class="overlaytitle">${array[i].title}</p>
                 </div>
             </div>`
+        showHover(gifoDiv);
+        gifoButtons(gifoDiv);
         }
+        iterations++;
     }
+
+
+}
+
+function showHover(gifo){
+    //MUESTRA Y ESCONDE OVERLAY CON HOVER
+    gifo.addEventListener("mouseover", ()=>{
+        gifo.querySelector(".overlaygifo").classList.remove("hidden");
+    })
+    gifoDiv.addEventListener("mouseout", ()=>{
+        gifo.querySelector(".overlaygifo").classList.add("hidden");
+    })
+    //MAXIMIZA GIFO AL CLICK EN DISP MOVILES
+    if(window.matchMedia("(max-width: 768px)").matches){
+        gifo.addEventListener("click", ()=>{
+            //FUNCION MAXIMIZAR PENDIENTE
+            ////
+            ////
+            ////
+
+        })
+    }
+}
+
+function gifoButtons(gifo){
+    let buttons= gifo.querySelectorAll(".overlaybuttons img");
+    //HOVER LOGOS
+    buttons[0].addEventListener("mouseover", ()=>{
+        buttons[0].src="./images/assets/icon-fav-hover.svg";
+    })
+    buttons[0].addEventListener("mouseleave", ()=>{
+        buttons[0].src="./images/assets/icon-fav.svg"
+    })
+    buttons[1].addEventListener("mouseover", ()=>{
+        buttons[1].src="./images/assets/icon-download-hover.svg"
+    })
+    buttons[1].addEventListener("mouseleave", ()=>{
+        buttons[1].src="./images/assets/icon-download.svg"
+    })
+    buttons[2].addEventListener("mouseover", ()=>{
+        buttons[2].src="./images/assets/icon-max-hover.svg"
+    })
+    buttons[2].addEventListener("mouseleave", ()=>{
+        buttons[2].src="./images/assets/icon-max-normal.svg"
+    })
+    //ALMACENA GIFO EN FAVORITOS
+        //FUNCION FAVORITOS
+
 
 }
 
