@@ -89,18 +89,24 @@ input{
 }
 
 .autocomplete li {
-    position: relative;
+    display: flex;
+    // position: relative;
     font-family: $mont;
     padding-top: 10px;
 }
 
 li img{
-    // display: flex;
     position: absolute;
-    left: 23px;
-    top: 0px;
-    vertical-align: text-bottom;
+    margin-left: 22px;
 
+}
+
+li p{
+    margin-left: 55px;
+    margin-right: 10px;
+    text-align: left;
+    text-transform: capitalize;
+    color: $darkbody;
 }
 
 .autocomplete li:first-child{
@@ -111,10 +117,8 @@ li img{
     padding-bottom: 18px;
 }
 
-.autocomplete li p {
-  display: inline;
-  padding-left: 1rem;
-}
+
+
 
 @media screen and (min-width: 769px){
     .main{

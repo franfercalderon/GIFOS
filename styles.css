@@ -80,6 +80,14 @@ body.dark .search input {
   color: white;
 }
 
+body.dark .autocomplete li p {
+  color: #9CAFC3;
+}
+
+body.dark .searchresults h2 {
+  color: #F3F5F8;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -383,16 +391,24 @@ input {
 }
 
 .autocomplete li {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-family: "Montserrat", sans-serif;
   padding-top: 10px;
 }
 
 li img {
   position: absolute;
-  left: 23px;
-  top: 0px;
-  vertical-align: text-bottom;
+  margin-left: 22px;
+}
+
+li p {
+  margin-left: 55px;
+  margin-right: 10px;
+  text-align: left;
+  text-transform: capitalize;
+  color: #37383C;
 }
 
 .autocomplete li:first-child {
@@ -401,11 +417,6 @@ li img {
 
 .autocomplete li:last-child {
   padding-bottom: 18px;
-}
-
-.autocomplete li p {
-  display: inline;
-  padding-left: 1rem;
 }
 
 @media screen and (min-width: 769px) {
@@ -701,6 +712,10 @@ footer {
   }
 }
 
+.searchinput {
+  text-transform: capitalize;
+}
+
 .divline {
   width: 157px;
   height: 1px;
@@ -757,6 +772,20 @@ footer {
   height: 120px;
 }
 
+.noreslogo {
+  width: 120px;
+  margin-top: 60px;
+}
+
+.searchresults h3 {
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #50E3C2;
+  font-size: 16px;
+  margin: 29px 0 50px 0;
+}
+
 @media screen and (min-width: 769px) {
   .divline {
     width: 338px;
@@ -774,6 +803,14 @@ footer {
   .gifcontainer img {
     width: 260px;
     height: 200px;
+  }
+  .noreslogo {
+    width: 150px;
+    margin-top: 109px;
+  }
+  .searchresults h3 {
+    font-size: 22px;
+    margin: 29px 0 149px 0;
   }
 }
 

@@ -64,5 +64,12 @@ body.dark .search input{
     color: white;
 }
 
+body.dark .autocomplete li p{
+    color: $maingrey;
+}
+
+body.dark .searchresults h2{
+    color: $backgrey;
+}
 
 

@@ -1,3 +1,7 @@
+.searchinput{
+    text-transform: capitalize;
+}
+
 .divline{
     width: 157px;
     height: 1px;
@@ -42,6 +46,23 @@
     height: 120px;
 }
 
+.noreslogo{
+    width: 120px;
+    // margin-top: 109px;
+    margin-top: 60px;
+}
+
+.searchresults h3{
+    width: 100%;
+    text-align: center;
+    font-family: $mont;
+    color: $maingreen;
+    // font-size: 22px;
+    font-size: 16px;
+    // margin: 29px 0 149px 0;
+    margin: 29px 0 50px 0;
+}
+
 @media screen and (min-width: 769px){
     .divline{
         width: 338px;
@@ -63,6 +84,16 @@
     .gifcontainer img{
         width: 260px;
         height: 200px;
+    }
+
+    .noreslogo{
+        width: 150px;
+        margin-top: 109px;
+    }
+
+    .searchresults h3{
+        font-size: 22px;
+        margin: 29px 0 149px 0;
     }
 } 
 

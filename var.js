@@ -24,6 +24,7 @@ const searchBar=document.querySelector(".searchinput");
 const autocompleteUL= document.querySelector(".autocomplete");
 const autocompletecontainer= document.querySelector(".autocompletecontainer");
 const searchResults= document.querySelector(".searchresults");
+const mainTrending= document.querySelector(".mainTrending");
 
 //VARIABLES
 

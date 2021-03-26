@@ -35,6 +35,8 @@ function enableDark(){
         igLogo.src="./images/assets/icon_instagram_noc.svg";
         document.querySelector(".leftslider").src="./images/assets/button-slider-left-md-noct.svg";
         document.querySelector(".rightslider").src="./images/assets/button-slider-right-md-noct.svg";
+        closeSearch.src="./images/assets/closedark.svg";
+        searchBar.style.borderBottom="1px solid white";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
     }else{
@@ -48,6 +50,8 @@ function enableDark(){
         igLogo.src="./images/assets/icon_instagram.svg";
         document.querySelector(".leftslider").src="./images/assets/button-slider-left.svg";
         document.querySelector(".rightslider").src="./images/assets/Button-Slider-right.svg";
+        closeSearch.src="./images/assets/close.svg";
+        searchBar.style.borderBottom="1px solid #572EE5"
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
     }
@@ -100,13 +104,37 @@ function fillTags(array){
     trendingTags.innerHTML= "";
     //CREA LOS ELEMENTOS
     for(let i=0; i<5; i++){
-        let tag=document.createElement("span");
+        var tag=document.createElement("span");
         tag.classList.add("tags");
         tag.innerHTML= array[i];
         trendingTags.appendChild(tag);
+        // tag.addEventListener("click", ()=>{
+        //     // searchBar.value=array[i];
+        //     search(array[i]);
+            // doSearch();
+            
+        // })
+        // tagListener();
     }
+    tagListener();
     //GENERATE TAG LISTENERS
+    // for(let i=0; i<5; i++){
+    //     document.querySelectorAll(".tags").addEventListener("click", ()=>{
+    //         console.log("CHOTO");
+    //     })
+    // }
 
+}
+
+function tagListener(){
+    for(let i=0; i<5; i++){
+        document.querySelectorAll(".tags")[i].addEventListener("click", ()=>{
+            console.log("choto2")
+            let input= searchBar.value=document.querySelectorAll(".tags")[i].innerHTML;
+            search(input);
+            doSearch();
+        })
+    }
 }
 
 function hideSearch(){
@@ -126,6 +154,8 @@ function hideSearch(){
 function fillSearchSuggestions(array){
     if (searchBar.value.length == 0){
         hideSearch();
+        mainTrending.classList.remove("hidden");
+
     }
     else{
         autocompletecontainer.classList.remove("hidden");
@@ -137,13 +167,21 @@ function fillSearchSuggestions(array){
         closeSearch.addEventListener("click", ()=>{
             hideSearch();
         })
+        mainTrending.classList.add("hidden");
         for(let i = 0; i<5; i++){
             let li=document.createElement("li");
-            li.innerHTML=`<img src="images/assets/icon-search.svg"><p>${array[i].title}</p>`
+            if(darkStatus==false){
+                li.innerHTML=`<img src="images/assets/icon-search.svg" class="limagnifier"><p>${array[i].title}</p>`
+            }
+            else{
+                li.innerHTML=`<img src="images/assets/icon-search-mod-noc.svg" class="limagnifier"><p>${array[i].title}</p>`
+            }
+            
             autocompleteUL.appendChild(li);
             li.addEventListener("click", ()=>{
                 searchBar.value= array[i].title;
                 hideSearch();
+            
         })
     }
     }
@@ -197,6 +235,7 @@ function renderSearch(array, input){
     if(array.length==0){
         let noResLogo= document.createElement("img");
         noResLogo.src="./images/assets/ouch.svg";
+        noResLogo.classList.add("noreslogo");
         searchResults.appendChild(noResLogo);
         let noResLegend= document.createElement("h3");
         noResLegend.innerHTML="Intenta con otra búsqueda";
@@ -216,11 +255,8 @@ function renderSearch(array, input){
         img=document.createElement("img");
         img.src=`${array[i].url}`;
         gifoDiv.appendChild(img);
+        }
     }
-    }
-    
-
-    
 
 }
 
