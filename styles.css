@@ -791,6 +791,50 @@ footer {
   margin: 29px 0 50px 0;
 }
 
+.overlaygifo {
+  background-color: #572EE5;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.overlaybuttons {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+}
+
+.overlaybuttons img {
+  width: 28px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.overlayp {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 10px 8px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.overlaytitle {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.overlayuser {
+  font-size: 12px;
+  font-weight: 300;
+}
+
 @media screen and (min-width: 769px) {
   .divline {
     width: 338px;
@@ -816,6 +860,24 @@ footer {
   .searchresults h3 {
     font-size: 22px;
     margin: 29px 0 149px 0;
+  }
+  .overlaybuttons {
+    margin-top: 10px;
+  }
+  .overlaybuttons img {
+    width: 32px;
+    height: auto;
+    margin-right: 11px;
+  }
+  .overlayp {
+    margin: 0 0 20px 12px;
+  }
+  .overlaytitle {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .overlayuser {
+    font-size: 15px;
   }
 }
 

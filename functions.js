@@ -238,9 +238,19 @@ function renderSearch(array, input){
         gifoDiv=document.createElement("div");
         gifoDiv.classList.add("gifcontainer");
         containerDiv.appendChild(gifoDiv);
-        img=document.createElement("img");
-        img.src=`${array[i].url}`;
-        gifoDiv.appendChild(img);
+        gifoDiv.innerHTML=`<img src="${array[i].url} alt="${array[i].title}>
+            <!--GENERA OVERLAY-->
+            <div class="overlaygifo ">
+                <div class="overlaybuttons">
+                    <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                    <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                    <img src="images/assets/icon-max-normal.svg" alt="">
+                </div>
+                <div class="overlayp">
+                    <p class="overlayuser">${array[i].author}</p>
+                    <p class="overlaytitle">${array[i].title}</p>
+                </div>
+            </div>`
         }
     }
 
