@@ -59,6 +59,8 @@ function enableDark(){
 
 //  MOSTRAR SECTION FAVORITOS
 function openFavSec(){
+    retrieveFavs();
+    renderFavs();
     mainSec.classList.add("hidden");
     favSec.classList.remove("hidden");
     mygifosSec.classList.add("hidden");
@@ -75,7 +77,6 @@ function openFavSec(){
     }else{
         menuBtn.src="./images/assets/burgerdark.svg";
     }
-    // showFav();
 }
 
 function openMain(){
@@ -303,8 +304,17 @@ function gifoButtons(gifo){
     buttons[2].addEventListener("mouseleave", ()=>{
         buttons[2].src="./images/assets/icon-max-normal.svg"
     })
-    //ALMACENA GIFO EN FAVORITOS
-        //FUNCION FAVORITOS
+    //FUNCION CLICK
+        //FAV
+        buttons[0].addEventListener("click", ()=>{
+            buttons[0].src="./images/assets/icon-fav-act.svg";
+            var newFavGifo= new FAVGIFO(
+                favArray.length,
+                gifo.querySelector(".overlayuser").innerHTML,
+                gifo.querySelector(".overlaytitle").innerHTML,
+                gifo.querySelector("img").src,
+            )
+        })
 
 
 }

@@ -697,6 +697,44 @@ footer {
   text-align: center;
 }
 
+.favcontainer {
+  padding: 46px 0 78px 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.favdiv {
+  display: inline;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 12px;
+}
+
+.favdiv img {
+  width: 156px;
+  height: 120px;
+}
+
+.overlayfavbuttons {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+}
+
+.overlayfavbuttons img {
+  width: 28px;
+  height: auto;
+  margin-right: 8px;
+}
+
 @media screen and (min-width: 769px) {
   .favlogo {
     margin: 11px 0 8px 0;
@@ -714,6 +752,24 @@ footer {
   .nofav h3 {
     font-size: 22px;
     width: 431px;
+  }
+  .favcontainer {
+    padding: 45px 143px 64px 143px;
+  }
+  .favdiv {
+    margin: 14px;
+  }
+  .favdiv img {
+    width: 260px;
+    height: 200px;
+  }
+  .overlayfavbuttons {
+    margin-top: 10px;
+  }
+  .overlayfavbuttons img {
+    width: 32px;
+    height: auto;
+    margin-right: 11px;
   }
 }
 

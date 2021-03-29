@@ -82,7 +82,7 @@ searchBar.addEventListener("keypress", (input)=>{
     }
 })
 
-//GIFO COMO OBJETOS
+//CONSTRUCTOR OBJETO GIFO
 function GIFO(index, author, title, url){
     this.index=index;
     this.author=author;
@@ -94,6 +94,27 @@ function GIFO(index, author, title, url){
         this.title="Untitled";
     }
     this.url=url;
+
+    return this;
+}
+
+//CONSTRUCTOR GIFO FAVORITO
+function FAVGIFO(index, author, title, url){
+    this.index=index; 
+    this.author=author;
+    if(this.author==""){
+        this.author="Desconocido"
+    }
+    this.title=title;
+    if(this.title==""){
+        this.title="Desconocido"
+    }
+    this.url= url;
+    
+    // console.log(this);
+    // favArray.push(this);
+
+    setFavGifo(this);
 
     return this;
 }
