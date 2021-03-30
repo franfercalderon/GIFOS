@@ -88,6 +88,10 @@ body.dark .searchresults h2 {
   color: #F3F5F8;
 }
 
+body.dark .favtitle h2 {
+  color: #F3F5F8;
+}
+
 .header {
   position: relative;
   display: -webkit-box;

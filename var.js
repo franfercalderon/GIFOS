@@ -30,6 +30,7 @@ const mainTrending= document.querySelector(".mainTrending");
 
 var menuOpen= false;
 var darkStatus= false;
+var favOpen= false;
 var prevOffset= 0;
 var iterations = 0;
 var gifoResults= [];

@@ -12,7 +12,7 @@ retrieveFavs();
 
 //ALMACENA GIFO COMO FAV EN ARRAY Y LOCAL STORAGE
 function setFavGifo(item){
-    favArray.push(item);
+    favArray.unshift(item);
     localStorage.setItem("FAVGIFS", JSON.stringify(favArray));
     //ACTUALIZA RENDER DE FAVORITOS
     renderFavs();

@@ -59,23 +59,37 @@ function enableDark(){
 
 //  MOSTRAR SECTION FAVORITOS
 function openFavSec(){
-    retrieveFavs();
-    renderFavs();
-    mainSec.classList.add("hidden");
-    favSec.classList.remove("hidden");
-    mygifosSec.classList.add("hidden");
-    maxSec.classList.add("hidden");
-    searchResults.classList.add("hidden");
-    //CIERRA MENÚ HAMBURGUESA
-    if(menuOpen=true){
-        mobileUl.classList.toggle("hidden");
-        menuOpen=false;
+    //CHEQUEA SI LA SECCIÓN ESTÁ ABIERTA O CERRADA
+    if(favOpen==false){
+        retrieveFavs();
+        renderFavs();
+        mainSec.classList.add("hidden");
+        favSec.classList.remove("hidden");
+        mygifosSec.classList.add("hidden");
+        maxSec.classList.add("hidden");
+        searchResults.classList.add("hidden");
+        //CIERRA MENÚ HAMBURGUESA
+        if(menuOpen=true){
+            mobileUl.classList.toggle("hidden");
+            menuOpen=false;
+        }
+        //CHEQUEA DARK MODE
+        if(darkStatus==false){
+            menuBtn.src="./images/assets/burger.svg";
+        }else{
+            menuBtn.src="./images/assets/burgerdark.svg";
+        }
+        document.querySelector(".favbtndesktop").style.color="#9CAFC3";
+        favOpen=true;
     }
-    //CHEQUEA DARK MODE
-    if(darkStatus==false){
-        menuBtn.src="./images/assets/burger.svg";
-    }else{
-        menuBtn.src="./images/assets/burgerdark.svg";
+    else{
+        mainSec.classList.remove("hidden");
+        favSec.classList.add("hidden");
+        mygifosSec.classList.remove("hidden");
+        maxSec.classList.remove("hidden");
+        searchResults.classList.remove("hidden");
+        document.querySelector(".favbtndesktop").style.color="#572EE5";
+        favOpen=false;
     }
 }
 
@@ -84,6 +98,8 @@ function openMain(){
     favSec.classList.add("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
+    document.querySelector(".favbtndesktop").style.color="#572EE5";
+    favOpen=false;
 
 }
 
@@ -315,6 +331,10 @@ function gifoButtons(gifo){
                 gifo.querySelector("img").src,
             )
         })
+        //DESCARGAR
+        buttons[1].addEventListener("click", ()=>{
+            downloadGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML)
+        });
 
 
 }
@@ -366,13 +386,13 @@ function doSearch(){
 
 }
 
-// async function downloadGifo(url, name){
-//     let a = document.createElement("a");
-//     let source = await fetch (url);
-//     let file = await source.blob();
-//     a.download=name + ".gif";
-//     a.href=window.URL.createObjectURL(file);
-//     a.dataset.downloadurl=['application/octet-stream', a.download, a.href].join(':');
-//     a.click();
-// }
+async function downloadGifo(url, name){
+    let a = document.createElement("a");
+    let source = await fetch (url);
+    let file = await source.blob();
+    a.download=name + ".gif";
+    a.href=window.URL.createObjectURL(file);
+    a.dataset.downloadurl=['application/octet-stream', a.download, a.href].join(':');
+    a.click();
+}
 
