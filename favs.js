@@ -81,14 +81,12 @@ function renderFavs(){
                     document.querySelector(".favcontainer").innerHTML="";
                 }
             })
+            //DESCARGAR
+            favbtns[1].addEventListener("click", ()=>{
+                downloadGifo(favArray[i].url, favArray[i].title)
+            })
 
         }
-        if(favIterations<1){
-            let eraseAllBtn= document.createElement("div");
-            eraseAllBtn.classList.add("eraseAllBtn");
-            document.querySelector(".favcontainer").appendChild(eraseAllBtn);
-        }
-        favIterations++;
     }
 }
 renderFavs();

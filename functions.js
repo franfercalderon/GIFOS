@@ -366,4 +366,13 @@ function doSearch(){
 
 }
 
+// async function downloadGifo(url, name){
+//     let a = document.createElement("a");
+//     let source = await fetch (url);
+//     let file = await source.blob();
+//     a.download=name + ".gif";
+//     a.href=window.URL.createObjectURL(file);
+//     a.dataset.downloadurl=['application/octet-stream', a.download, a.href].join(':');
+//     a.click();
+// }
 
