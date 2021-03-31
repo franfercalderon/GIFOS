@@ -344,7 +344,7 @@ function gifoButtons(gifo){
         });
         //MAXIMIZAR
         buttons[2].addEventListener("click", ()=>{
-            maxGifo();
+            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML);
         })
 
 
@@ -409,9 +409,42 @@ async function downloadGifo(url, name){
     a.click();
 }
 
-function maxGifo(){
-    let maxdiv= document.createElement("div");
-    maxdiv.classList.add("maxdiv");
-    searchResults.appendChild(maxdiv)
+function maxGifo(url, title, user){
+    //OCULTA SECCIONES Y MUESTRA SECCIÓN MAX
+    // mainSec.classList.add("hidden");
+    // searchResults.classList.add("hidden");
+    // maxSec.classList.remove("hidden");
+    maxSec.style.visibility="visible";
+    maxSec.scrollIntoView({behavior: 'smooth' });
+    console.log(url, title, user);
+
+    //CREA ELEMENTOS E INSERTA GIF
+    let close= document.createElement("img");
+    close.classList.add("closemax");
+    if(darkStatus==false){
+        close.src="./images/assets/close.svg";
+    }else{
+        close.src="./images/assets/closedark.svg";
+    }
+    maxSec.appendChild(close);
+    let maxdivcontainer=document.createElement("div");
+    maxdivcontainer.classList.add("maxdivcontainer")
+    maxSec.appendChild(maxdivcontainer);
+    maxdivcontainer.innerHTML=`<img src="${url}" alt="${title} ">
+    <div class="maxp">
+        <p class="maxuser">${user}</p>
+        <p class="maxtitle">${title}</p>
+    </div>
+    <div class="maxbtns">
+        <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+        <img src="images/assets/icon-download.svg" alt="ícono descargar">
+    </div>`
+
+    // let gifimg= document.createElement("img");
+    // gifimg.src=url;
+    // maxdivcontainer.appendChild(gifimg);
+
+    // let pdiv= document.createElement("div");
+
 
 }

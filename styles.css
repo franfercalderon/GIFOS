@@ -984,4 +984,117 @@ footer {
 .hidden {
   display: none;
 }
+
+.maxsec {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 59px 7.4% 0 7.4%;
+  visibility: hidden;
+}
+
+.closemax {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 78px;
+}
+
+.maxdivcontainer {
+  position: relative;
+  width: 100%;
+}
+
+.maxdivcontainer img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+}
+
+.maxp {
+  position: absolute;
+  max-width: 60%;
+}
+
+.maxp p {
+  color: black;
+}
+
+.maxp p::first-letter {
+  text-transform: capitalize;
+}
+
+.maxuser {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 300;
+}
+
+.maxtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.maxbtns {
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.maxbtns img {
+  height: 36px;
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 1092px) {
+  .closemax {
+    position: relative;
+    right: 120px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .maxsec {
+    padding-top: 66px;
+  }
+  .closemax {
+    margin-bottom: 78px;
+  }
+  .maxdivcontainer {
+    width: 695px;
+  }
+  .maxdivcontainer img {
+    margin-bottom: 27px;
+  }
+  .maxp {
+    max-width: 80%;
+  }
+  .maxuser {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .maxtitle {
+    font-size: 18px;
+  }
+  .maxbtns img {
+    height: 38px;
+    margin-left: 10px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
