@@ -287,7 +287,7 @@ function renderSearch(array, input){
 }
 
 function showHover(gifo){
-    //MUESTRA Y ESCONDE OVERLAY CON HOVER
+    //MUESTRA OVERLAY CON HOVER
     gifo.addEventListener("mouseover", ()=>{
         gifo.querySelector(".overlaygifo").classList.remove("hidden");
     })
@@ -295,11 +295,11 @@ function showHover(gifo){
         gifo.querySelector(".overlaygifo").classList.add("hidden");
     })
     //MAXIMIZA GIFO AL CLICK EN DISP MOVILES
-    if(window.matchMedia("(max-width: 768px)").matches){
-        gifo.addEventListener("click", ()=>{
-            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults)
-        })
-    }
+    // if(window.matchMedia("(max-width: 768px)").matches){
+    //     gifo.addEventListener("click", ()=>{
+    //         maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults)
+    //     })
+    // }
 }
 
 function gifoButtons(gifo){
