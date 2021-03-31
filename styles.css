@@ -821,6 +821,7 @@ footer {
 }
 
 .searchresults h2 {
+  margin-bottom: 26px;
   width: 100%;
   text-align: center;
   font-size: 25px;
@@ -830,7 +831,6 @@ footer {
 }
 
 .resultsgifocontainer {
-  padding: 26px 0 66px 0;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -915,7 +915,7 @@ footer {
   width: 127px;
   border: 1px solid #572EE5;
   border-radius: 25px;
-  margin-bottom: 79px;
+  margin: 66px 0 79px 0;
   background-color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -935,15 +935,16 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
+  .searchresults {
+    padding: 0 143px 0 143px;
+  }
   .divline {
     width: 338px;
     margin-bottom: 82px;
   }
   .searchresults h2 {
+    margin-bottom: 45px;
     font-size: 35px;
-  }
-  .resultsgifocontainer {
-    padding: 45px 143px 64px 143px;
   }
   .gifcontainer {
     margin: 14px;

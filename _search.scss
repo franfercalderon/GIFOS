@@ -19,6 +19,7 @@
 }
 
 .searchresults h2{
+    margin-bottom: 26px;
     width: 100%;
     text-align: center;
     font-size: 25px;
@@ -28,7 +29,6 @@
 }
 
 .resultsgifocontainer{
-    padding: 26px 0 66px 0;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,7 +48,6 @@
 
 .noreslogo{
     width: 120px;
-    // margin-top: 109px;
     margin-top: 60px;
 }
 
@@ -108,7 +107,7 @@
     width: 127px;
     border: 1px solid $mainviolet;
     border-radius: 25px;
-    margin-bottom: 79px;
+    margin: 66px 0 79px 0;
     background-color: white;
     font-family: $mont;
     font-size: 13px;
@@ -129,17 +128,18 @@
 
 
 @media screen and (min-width: 769px){
+    .searchresults{
+        padding: 0 143px 0 143px;
+    }
+
     .divline{
         width: 338px;
         margin-bottom: 82px;
     }
 
     .searchresults h2{
+        margin-bottom: 45px;
         font-size: 35px;
-    }
-
-    .resultsgifocontainer{
-        padding: 45px 143px 64px 143px;
     }
 
     .gifcontainer{

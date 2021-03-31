@@ -98,8 +98,13 @@ function openMain(){
     favSec.classList.add("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
-    document.querySelector(".favbtndesktop").style.color="#572EE5";
     favOpen=false;
+    if(darkStatus==true){
+        document.querySelector(".favbtndesktop").style.color="white";
+    }
+    else{
+        document.querySelector(".favbtndesktop").style.color="#572EE5";
+    }
 
 }
 
@@ -128,7 +133,7 @@ function fillTags(array){
         tag.innerHTML= array[i];
         trendingTags.appendChild(tag);
     }
-    //GENERATE TAG LISTENERS
+    // TAG LISTENERS
     tagListener();
     
 }
@@ -206,11 +211,6 @@ async function suggest(input){
             console.log(err)
         })
 }
-// function createButton(){
-//     let newButton= document.createElement("button");
-//     newButton.classList.add("morebtn");
-//     newButton.innerHTML="VER MÁS";
-// }
 
 function renderSearch(array, input){
     //SI ES LA PRIMERA BÚSQUEDA
@@ -226,19 +226,8 @@ function renderSearch(array, input){
         let h2= document.createElement("h2");
         h2.innerHTML=input;
         searchResults.appendChild(h2);
-
-        //CREA BOTON VER MAS
-        // if(array.length!= 0){
-        //     let newButton= document.createElement("button");
-        //     newButton.classList.add("morebtn");
-        //     newButton.innerHTML="VER MÁS";
-        //     searchResults.appendChild(newButton);
-        // }
-        // let newButton= document.createElement("button");
-        // newButton.classList.add("morebtn");
-        // newButton.innerHTML="VER MÁS";
-        // searchResults.appendChild(newButton);
     }
+
     //SI NO SE OBTIENEN RESULTADOS
     if(array.length==0){
         let noResLogo= document.createElement("img");
@@ -249,73 +238,53 @@ function renderSearch(array, input){
         noResLegend.innerHTML="Intenta con otra búsqueda";
         searchResults.appendChild(noResLegend);
     }
-    // else{
-        //CREA DIV CONTENEDOR
-        var containerDiv= document.createElement("div");
-        containerDiv.classList.add("resultsgifocontainer");
-        searchResults.appendChild(containerDiv);
 
-        //RENDERIZA GIFOS
-        for(let i=0; i<array.length; i++){
-        gifoDiv=document.createElement("div");
-        gifoDiv.classList.add("gifcontainer");
-        
-        gifoDiv.innerHTML=`<img src="${array[i].url} alt="${array[i].title}>
-            <!--GENERA OVERLAY-->
-            <div class="overlaygifo hidden">
-                <div class="overlaybuttons">
-                    <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
-                    <img src="images/assets/icon-download.svg" alt="ícono descargar">
-                    <img src="images/assets/icon-max-normal.svg" alt="">
-                </div>
-                <div class="overlayp">
-                    <p class="overlayuser">${array[i].author}</p>
-                    <p class="overlaytitle">${array[i].title}</p>
-                </div>
-            </div>`
-        containerDiv.appendChild(gifoDiv);
-        showHover(gifoDiv);
-        gifoButtons(gifoDiv);
-        }
-        iterations++;
-        //LLAMA A FUNCION CREAR BOTON "VER MAS"
-        if (iterations<3){
-            if(array.length>11){
-                viewMoreBtn();
-            }
-        }
-        else if (array.length - (prevOffset - 12) > 11) {
-            viewMoreBtn();
-        }
-        // if(array.length - (prevOffset-12)>11){
-        //     viewMoreBtn();
-        // }
+    //CREA DIV CONTENEDOR
+    var containerDiv= document.createElement("div");
+    containerDiv.classList.add("resultsgifocontainer");
+    searchResults.appendChild(containerDiv);
 
-        //FUNCION CREAR BOTON "VER MAS"
-        function viewMoreBtn(){
-            let btn = document.createElement("button");
-            btn.classList.add("viewmore");
-            btn.innerHTML="VER MÁS";
-            btn.addEventListener("click", ()=>{
-                document.querySelector(".viewmore").remove();
-                prevOffset=prevOffset+12;
-                search(input);
-                // doSearch();
-            });
-            searchResults.append(btn);
-        }
-    // }
+    //RENDERIZA GIFOS
+    for(let i=0; i<array.length; i++){
+    gifoDiv=document.createElement("div");
+    gifoDiv.classList.add("gifcontainer");
+    
+    gifoDiv.innerHTML=`<img src="${array[i].url} alt="${array[i].title}>
+        <!--GENERA OVERLAY-->
+        <div class="overlaygifo hidden">
+            <div class="overlaybuttons">
+                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                <img src="images/assets/icon-max-normal.svg" alt="">
+            </div>
+            <div class="overlayp">
+                <p class="overlayuser">${array[i].author}</p>
+                <p class="overlaytitle">${array[i].title}</p>
+            </div>
+        </div>`
+    containerDiv.appendChild(gifoDiv);
+    showHover(gifoDiv);
+    gifoButtons(gifoDiv);
+    }
+    iterations++;
+    //LLAMA A FUNCION CREAR BOTON "VER MAS"
+    if(array.length>11){
+        viewMoreBtn();
+    }
 
+    //FUNCION CREAR BOTON "VER MAS"
+    function viewMoreBtn(){
+        let btn = document.createElement("button");
+        btn.classList.add("viewmore");
+        btn.innerHTML="VER MÁS";
+        btn.addEventListener("click", ()=>{
+            document.querySelector(".viewmore").remove();
+            prevOffset=prevOffset+12;
+            search(input);
+        });
+        searchResults.append(btn);
+    }
 }
-
-// function viewMoreBtn(){
-//     let btn= document.createElement("button");
-//     btn.classList.add("viewmorebtn");
-//     btn.innerHTML= "VER MÁS"
-//     searchResults.appendChild(btn);
-//     console.log("lohace")
-
-// }
 
 function showHover(gifo){
     //MUESTRA Y ESCONDE OVERLAY CON HOVER
@@ -373,14 +342,19 @@ function gifoButtons(gifo){
         buttons[1].addEventListener("click", ()=>{
             downloadGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML)
         });
+        //MAXIMIZAR
+        buttons[2].addEventListener("click", ()=>{
+            maxGifo();
+        })
 
 
 }
 
 function fillGifoPreview(array, input){
     //CREA ARRAY DE RESULTADOS DE BUSQUEDA COMO OBJETOS
+    
     for(let i=0; i<array.length; i++){
-        var newGifo = new GIFO(
+        let newGifo = new GIFO(
             i+prevOffset,
             array[i].username,
             array[i].title,
@@ -399,8 +373,8 @@ async function search(input){
     await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 12 + "&offset=" + (prevOffset+1) + "&rating=g")
     .then(res=>{return(res.json())})
     .then(json=>{
-        console.log(json);
-        console.log(input);
+        // console.log(json);
+        // console.log(input);
         fillGifoPreview(json.data , input);
     })
     .catch(err=> console.log(err))
@@ -435,3 +409,9 @@ async function downloadGifo(url, name){
     a.click();
 }
 
+function maxGifo(){
+    let maxdiv= document.createElement("div");
+    maxdiv.classList.add("maxdiv");
+    searchResults.appendChild(maxdiv)
+
+}

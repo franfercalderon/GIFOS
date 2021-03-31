@@ -110,9 +110,6 @@ function FAVGIFO(index, author, title, url){
         this.title="Desconocido"
     }
     this.url= url;
-    
-    // console.log(this);
-    // favArray.push(this);
 
     setFavGifo(this);
 
