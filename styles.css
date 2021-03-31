@@ -999,7 +999,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 59px 7.4% 0 7.4%;
@@ -1014,17 +1014,33 @@ footer {
 
 .maxdivcontainer {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
-.maxdivcontainer img {
+.maxgifo {
   width: 100%;
-  height: auto;
+  max-height: 60vh;
   margin-bottom: 14px;
+  display: inline-block;
+}
+
+.maxfootercontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .maxp {
-  position: absolute;
   max-width: 60%;
 }
 
@@ -1050,11 +1066,12 @@ footer {
 }
 
 .maxbtns {
-  position: absolute;
+  position: relative;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  top: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .maxbtns img {
@@ -1079,7 +1096,7 @@ footer {
   .maxdivcontainer {
     width: 695px;
   }
-  .maxdivcontainer img {
+  .maxgifo {
     margin-bottom: 27px;
   }
   .maxp {

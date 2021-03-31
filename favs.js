@@ -85,7 +85,10 @@ function renderFavs(){
             favbtns[1].addEventListener("click", ()=>{
                 downloadGifo(favArray[i].url, favArray[i].title)
             })
-
+            //MAXIMIZAR
+            favbtns[2].addEventListener("click", ()=>{
+                maxGifo(favArray[i].url, favArray[i].title, favArray[i].author, favSec)
+            })
         }
     }
 }

@@ -204,7 +204,7 @@ async function suggest(input){
     await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 5 + "&rating=g")
         .then(res=>{return(res.json())})
         .then(json=>{
-            console.log(json)
+            // console.log(json)
             fillSearchSuggestions(json.data)
         })
         .catch(err=>{
@@ -297,11 +297,7 @@ function showHover(gifo){
     //MAXIMIZA GIFO AL CLICK EN DISP MOVILES
     if(window.matchMedia("(max-width: 768px)").matches){
         gifo.addEventListener("click", ()=>{
-            //FUNCION MAXIMIZAR PENDIENTE
-            ////
-            ////
-            ////
-
+            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults)
         })
     }
 }
@@ -331,7 +327,7 @@ function gifoButtons(gifo){
         //FAV
         buttons[0].addEventListener("click", ()=>{
             buttons[0].src="./images/assets/icon-fav-act.svg";
-            var newFavGifo= new FAVGIFO(
+            let newFavGifo= new FAVGIFO(
                 favArray.length,
                 gifo.querySelector(".overlayuser").innerHTML,
                 gifo.querySelector(".overlaytitle").innerHTML,
@@ -344,7 +340,7 @@ function gifoButtons(gifo){
         });
         //MAXIMIZAR
         buttons[2].addEventListener("click", ()=>{
-            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML);
+            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults);
         })
 
 
@@ -409,14 +405,9 @@ async function downloadGifo(url, name){
     a.click();
 }
 
-function maxGifo(url, title, user){
-    //OCULTA SECCIONES Y MUESTRA SECCIÓN MAX
-    // mainSec.classList.add("hidden");
-    // searchResults.classList.add("hidden");
-    // maxSec.classList.remove("hidden");
+function maxGifo(url, title, user, origin){
     maxSec.style.visibility="visible";
     maxSec.scrollIntoView({behavior: 'smooth' });
-    console.log(url, title, user);
 
     //CREA ELEMENTOS E INSERTA GIF
     let close= document.createElement("img");
@@ -430,21 +421,60 @@ function maxGifo(url, title, user){
     let maxdivcontainer=document.createElement("div");
     maxdivcontainer.classList.add("maxdivcontainer")
     maxSec.appendChild(maxdivcontainer);
-    maxdivcontainer.innerHTML=`<img src="${url}" alt="${title} ">
-    <div class="maxp">
-        <p class="maxuser">${user}</p>
-        <p class="maxtitle">${title}</p>
-    </div>
-    <div class="maxbtns">
-        <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
-        <img src="images/assets/icon-download.svg" alt="ícono descargar">
+    maxdivcontainer.innerHTML=`<img src="${url}" alt="${title} " class= "maxgifo">
+    <div class="maxfootercontainer">
+        <div class="maxp">
+            <p class="maxuser">${user}</p>
+            <p class="maxtitle">${title}</p>
+        </div>
+        <div class="maxbtns">
+            <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+            <img src="images/assets/icon-download.svg" alt="ícono descargar">
+        </div>
     </div>`
 
-    // let gifimg= document.createElement("img");
-    // gifimg.src=url;
-    // maxdivcontainer.appendChild(gifimg);
+    //CERRAR SECCIÓN
+    close.addEventListener("click", ()=>{
+        maxSec.innerHTML="";
+        maxSec.style.visibility="hidden";
+        //LLEVA AL ORIGEN
+        origin.scrollIntoView({behavior: 'smooth' });
+    })
 
-    // let pdiv= document.createElement("div");
+    //HOVER BOTONES
+    let botones= maxdivcontainer.querySelectorAll(".maxbtns img");
+
+    botones[0].addEventListener("mouseover", ()=>{
+        botones[0].src="images/assets/icon-fav-hover.svg"
+    });
+    botones[0].addEventListener("mouseleave", ()=>{
+        botones[0].src="images/assets/icon-fav.svg"
+    })
+    botones[1].addEventListener("mouseover", ()=>{
+        botones[1].src="images/assets/icon-download-hover.svg"
+    });
+    botones[1].addEventListener("mouseleave", ()=>{
+        botones[1].src="images/assets/icon-download.svg"
+    });
+
+    
+    //GUARDA FAVORITOS
+    botones[0].addEventListener("click", ()=>{
+        botones[0].src="images/assets/icon-fav-act.svg";
+        let newFavGifo= new FAVGIFO(
+            favArray.length,
+            user,
+            title,
+            url,
+        )
+    })
+
+    //DESCARGA GIF
+    botones[1].addEventListener("click", ()=>{
+        downloadGifo(url, title)
+    })
+
+    
 
 
 }
