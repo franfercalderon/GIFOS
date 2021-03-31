@@ -92,6 +92,24 @@ body.dark .favtitle h2 {
   color: #F3F5F8;
 }
 
+body.dark .viewmore {
+  border: 1px solid #F3F5F8;
+  background-color: #37383C;
+  color: #F3F5F8;
+}
+
+body.dark .viewmore:hover {
+  background-color: #F3F5F8;
+  border: #F3F5F8;
+  color: #37383C;
+}
+
+body.dark .viewmore:active {
+  background-color: #9CAFC3;
+  border: #9CAFC3;
+  color: #37383C;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -890,6 +908,30 @@ footer {
 .overlayuser {
   font-size: 12px;
   font-weight: 300;
+}
+
+.viewmore {
+  height: 50px;
+  width: 127px;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  margin-bottom: 79px;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #572EE5;
+}
+
+.viewmore:hover {
+  background-color: #572EE5;
+  color: white;
+}
+
+.viewmore:active {
+  border: #9CAFC3;
+  background-color: #9CAFC3;
+  color: white;
 }
 
 @media screen and (min-width: 769px) {

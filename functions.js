@@ -188,6 +188,9 @@ function fillSearchSuggestions(array){
                 searchBar.value= array[i].title;
                 hideSearch();
             })
+
+            iterations=0;
+            prevOffset=0;
         }
     }
 }
@@ -246,7 +249,7 @@ function renderSearch(array, input){
         noResLegend.innerHTML="Intenta con otra búsqueda";
         searchResults.appendChild(noResLegend);
     }
-    else{
+    // else{
         //CREA DIV CONTENEDOR
         var containerDiv= document.createElement("div");
         containerDiv.classList.add("resultsgifocontainer");
@@ -256,7 +259,7 @@ function renderSearch(array, input){
         for(let i=0; i<array.length; i++){
         gifoDiv=document.createElement("div");
         gifoDiv.classList.add("gifcontainer");
-        containerDiv.appendChild(gifoDiv);
+        
         gifoDiv.innerHTML=`<img src="${array[i].url} alt="${array[i].title}>
             <!--GENERA OVERLAY-->
             <div class="overlaygifo hidden">
@@ -270,14 +273,49 @@ function renderSearch(array, input){
                     <p class="overlaytitle">${array[i].title}</p>
                 </div>
             </div>`
+        containerDiv.appendChild(gifoDiv);
         showHover(gifoDiv);
         gifoButtons(gifoDiv);
         }
         iterations++;
-    }
+        //LLAMA A FUNCION CREAR BOTON "VER MAS"
+        if (iterations<3){
+            if(array.length>11){
+                viewMoreBtn();
+            }
+        }
+        else if (array.length - (prevOffset - 12) > 11) {
+            viewMoreBtn();
+        }
+        // if(array.length - (prevOffset-12)>11){
+        //     viewMoreBtn();
+        // }
 
+        //FUNCION CREAR BOTON "VER MAS"
+        function viewMoreBtn(){
+            let btn = document.createElement("button");
+            btn.classList.add("viewmore");
+            btn.innerHTML="VER MÁS";
+            btn.addEventListener("click", ()=>{
+                document.querySelector(".viewmore").remove();
+                prevOffset=prevOffset+12;
+                search(input);
+                // doSearch();
+            });
+            searchResults.append(btn);
+        }
+    // }
 
 }
+
+// function viewMoreBtn(){
+//     let btn= document.createElement("button");
+//     btn.classList.add("viewmorebtn");
+//     btn.innerHTML= "VER MÁS"
+//     searchResults.appendChild(btn);
+//     console.log("lohace")
+
+// }
 
 function showHover(gifo){
     //MUESTRA Y ESCONDE OVERLAY CON HOVER
@@ -375,6 +413,7 @@ function doSearch(){
         //RESET
         iterations= 0;
         prevOffset=0;
+        // searchResults.innerHTML="";
         gifoResults= [];
         //MOSTRAR SECCION DE RESULTADOS
         searchResults.classList.remove("hidden");

@@ -103,6 +103,30 @@
     font-weight: 300;
 }
 
+.viewmore{
+    height: 50px;
+    width: 127px;
+    border: 1px solid $mainviolet;
+    border-radius: 25px;
+    margin-bottom: 79px;
+    background-color: white;
+    font-family: $mont;
+    font-size: 13px;
+    font-weight: 600;
+    color: $mainviolet;
+}
+
+.viewmore:hover{
+    background-color: $mainviolet;
+    color: white;
+}
+
+.viewmore:active{
+    border: $maingrey;
+    background-color: $maingrey;
+    color: white;
+}
+
 
 @media screen and (min-width: 769px){
     .divline{

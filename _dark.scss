@@ -76,4 +76,23 @@ body.dark .favtitle h2{
     color: $backgrey;
 }
 
+body.dark .viewmore{
+    border: 1px solid $backgrey;
+    background-color: $darkbody;
+    color: $backgrey;
+}
+
+body.dark .viewmore:hover{
+    background-color: $backgrey;
+    border: $backgrey;
+    color: $darkbody;
+}
+
+body.dark .viewmore:active{
+    background-color: $maingrey;
+    border: $maingrey;
+    color: $darkbody;
+}
+
+
 
