@@ -17,6 +17,8 @@ const searchBar=document.querySelector(".searchinput");
 const autocompleteUL= document.querySelector(".autocomplete");
 const autocompletecontainer= document.querySelector(".autocompletecontainer");
 const mainTrending= document.querySelector(".mainTrending");
+const leftArrow= document.querySelector(".leftslider");
+const rightArrow= document.querySelector(".rightslider");
 
     //SECCIONES
     const mainSec= document.querySelector(".main");
@@ -38,3 +40,4 @@ var favOpen= false;
 var prevOffset= 0;
 var iterations = 0;
 var gifoResults= [];
+var imgTrack= "burger";

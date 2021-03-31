@@ -28,23 +28,32 @@
 
 .carouselcontainer{
     display: flex;
-    height: 187px;
-    // background-color: black;
+    height: 275px;
+    // background-color: red;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .trendingcontainer{
-    width: 100%;
-    padding: 0 22px 0 22px;
-    border: red 1px solid;
-    display: inline-block;
-    overflow: scroll;
+    display: flex;
+    margin: 0 22px 0 22px;
 }
 
-.placeholderdiv{
-    background-color: white;
-    height: 187px;
-    width: 243px;
-    margin-right: 22px;
+.trendinggifo{
+    max-width: 357px;
+    // max-height: 275px;
+    height: fit-content;
+    margin-right: 29px;
+}
+
+.trendinggifo img{
+    width: 100%;
+    height: 100%;
+}
+
+.trendinggifo:last-child{
+    margin-right: 0;
 }
 
 .trendingcontainer :last-child{
@@ -68,6 +77,14 @@
     font-weight: 500;
 }
 
+.leftslider{
+    margin-left: 40px;
+}
+
+.rightslider{
+    margin-right: 40px;
+}
+
 @media screen and (min-width: 769px){
     .trending{
         padding: 67px 0 182px 0;
@@ -88,17 +105,17 @@
         display: inline;
     }
 
-    .carouselcontainer{
-        justify-content: space-between;
-        padding: 0px 92px 0px 92px;
-        height: 275px;
-        align-items: center;
-    }
-    .placeholderdiv{
-        height: 275px;
-        width: 357px;
-        margin-right: 25px;
-    }
+    // .carouselcontainer{
+    //     justify-content: space-between;
+    //     padding: 0px 92px 0px 92px;
+    //     height: 275px;
+    //     align-items: center;
+    // }
+    // .placeholderdiv{
+    //     height: 275px;
+    //     width: 357px;
+    //     margin-right: 25px;
+    // }
 }
 
 

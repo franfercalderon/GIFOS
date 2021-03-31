@@ -94,11 +94,13 @@ function openFavSec(){
 }
 
 function openMain(){
+    //ESCONDE/MUESTRA SECCIONES PARA VOLVER A MENU PRINCIPAL
     mainSec.classList.remove("hidden");
     favSec.classList.add("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
     favOpen=false;
+    //CHEQUEA MODO NOCTURNO 
     if(darkStatus==true){
         document.querySelector(".favbtndesktop").style.color="white";
     }
@@ -109,6 +111,7 @@ function openMain(){
 }
 
 async function trendingTagsFn(){
+    //LLAMADA A API PARA TRAER TRENDING TAGS
     await fetch(apiTrengingTagsEP + "?api_key=" + apiKey)
         .then(response=>{
             return(response.json())
@@ -139,6 +142,7 @@ function fillTags(array){
 }
 
 function tagListener(){
+    //GENERA EVENTO ONCLICK EN CADA TAG PARA BÚSQUEDA
     for(let i=0; i<5; i++){
         document.querySelectorAll(".tags")[i].addEventListener("click", ()=>{
             let input= searchBar.value=document.querySelectorAll(".tags")[i].innerHTML;
@@ -150,6 +154,7 @@ function tagListener(){
 }
 
 function hideSearch(){
+    //ESCONDE SECCIÓN DE SUGERENCIAS Y ESTILIZA NUEVAMENTE LA SEARCHBAR
     searchBar.style.borderRadius = "27px";
     closeSearch.style.zIndex= "-1";
     searchIcon.style.left= "";
@@ -163,11 +168,13 @@ function hideSearch(){
 }
 
 function fillSearchSuggestions(array){
+    //SOLO SI NO HAY NADA EN LA SEARCHBAR
     if (searchBar.value.length == 0){
         hideSearch();
         mainTrending.classList.remove("hidden");
 
     }
+    //SI TIENE ALOG QUE BUSCAR, ESTILIZA LA BARRA DEBAJO
     else{
         autocompletecontainer.classList.remove("hidden");
         autocompleteUL.innerHTML = "";
@@ -179,6 +186,7 @@ function fillSearchSuggestions(array){
             hideSearch();
         })
         mainTrending.classList.add("hidden");
+        //GENERA LI EN LA UL CON EL ARRAY DE RESULTADOS OBTENIDO DE LA API
         for(let i = 0; i<5; i++){
             let li=document.createElement("li");
             if(darkStatus==false){
@@ -201,6 +209,7 @@ function fillSearchSuggestions(array){
 }
 
 async function suggest(input){
+    //LLAMA API PARA OBTENER SUGERENCIAS DE BUSQUEDA
     await fetch (apiSearchEP + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 5 + "&rating=g")
         .then(res=>{return(res.json())})
         .then(json=>{
@@ -295,11 +304,11 @@ function showHover(gifo){
         gifo.querySelector(".overlaygifo").classList.add("hidden");
     })
     //MAXIMIZA GIFO AL CLICK EN DISP MOVILES
-    // if(window.matchMedia("(max-width: 768px)").matches){
-    //     gifo.addEventListener("click", ()=>{
-    //         maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults)
-    //     })
-    // }
+    if(window.matchMedia("(max-width: 768px)").matches){
+        gifo.addEventListener("click", ()=>{
+            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults)
+        })
+    }
 }
 
 function gifoButtons(gifo){
@@ -342,8 +351,6 @@ function gifoButtons(gifo){
         buttons[2].addEventListener("click", ()=>{
             maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults);
         })
-
-
 }
 
 function fillGifoPreview(array, input){
@@ -406,6 +413,7 @@ async function downloadGifo(url, name){
 }
 
 function maxGifo(url, title, user, origin){
+    maxSec.innerHTML="";
     maxSec.style.visibility="visible";
     maxSec.scrollIntoView({behavior: 'smooth' });
 
@@ -435,7 +443,6 @@ function maxGifo(url, title, user, origin){
 
     //CERRAR SECCIÓN
     close.addEventListener("click", ()=>{
-        maxSec.innerHTML="";
         maxSec.style.visibility="hidden";
         //LLEVA AL ORIGEN
         origin.scrollIntoView({behavior: 'smooth' });
@@ -473,8 +480,24 @@ function maxGifo(url, title, user, origin){
     botones[1].addEventListener("click", ()=>{
         downloadGifo(url, title)
     })
-
-    
-
-
 }
+
+//TRENDING CAROUSSEL
+
+//HOVER FLECHAS
+leftArrow.addEventListener("mouseover", ()=>{
+    leftArrow.src="images/assets/button-slider-left-hover.svg"
+});
+leftArrow.addEventListener("mouseleave", ()=>{
+    leftArrow.src="images/assets/button-slider-left.svg"
+});
+rightArrow.addEventListener("mouseover", ()=>{
+    rightArrow.src="images/assets/button-slider-right-hover.svg"
+});
+rightArrow.addEventListener("mouseleave", ()=>{
+    rightArrow.src="images/assets/button-slider-right.svg"
+});
+
+
+
+

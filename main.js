@@ -1,6 +1,35 @@
 //COMPLETA LAS TRENDING TAGS
 trendingTagsFn();
 
+async function trendingTagsFn(){
+    //LLAMADA A API PARA TRAER TRENDING TAGS
+    await fetch(apiTrengingTagsEP + "?api_key=" + apiKey)
+        .then(response=>{
+            return(response.json())
+        })
+        .then(json=>{
+            // console.log(json)
+            fillTags(json.data)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+}
+
+getTrendingGifos();
+
+//LLAMADA API PARA OBTENER TRENDING GIFOS
+async function getTrendingGifos(){
+    await fetch(apiTrendingEP + "?api_key=" + apiKey)
+        .then(res=>{
+            return(res.json())
+        })
+        .then(json=>{
+            console.log(json)
+        })
+}
+
 //SEARCHBAR
 searchBar.addEventListener("input", ()=>{suggest(searchBar.value)});
 
@@ -65,6 +94,22 @@ igLogo.addEventListener("mouseout", ()=>{
     }
 })
 
+//MENU HAMBURGUESA
+menuBtn.addEventListener("click", desplegarMenu);
+
+function desplegarMenu(){
+    
+    if(imgTrack=="burger"){
+        menuBtn.src="./images/assets/close.svg"; 
+        imgTrack="close"
+        mobileUl.classList.toggle("hidden");
+    }else{
+        menuBtn.src="./images/assets/burger.svg";
+        imgTrack= "burger";
+        mobileUl.classList.toggle("hidden");
+    }
+}
+
 //MOSTRAR SECCIÓN PRINCIPAL
 document.querySelector(".logo").addEventListener("click", openMain);
 
@@ -115,6 +160,7 @@ function FAVGIFO(index, author, title, url){
 
     return this;
 }
+
 
 
 

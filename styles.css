@@ -513,22 +513,38 @@ li p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 187px;
+  height: 275px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
 }
 
 .trendingcontainer {
-  width: 100%;
-  padding: 0 22px 0 22px;
-  border: red 1px solid;
-  display: inline-block;
-  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 22px 0 22px;
 }
 
-.placeholderdiv {
-  background-color: white;
-  height: 187px;
-  width: 243px;
-  margin-right: 22px;
+.trendinggifo {
+  max-width: 357px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 29px;
+}
+
+.trendinggifo img {
+  width: 100%;
+  height: 100%;
+}
+
+.trendinggifo:last-child {
+  margin-right: 0;
 }
 
 .trendingcontainer :last-child {
@@ -552,6 +568,14 @@ li p {
   font-weight: 500;
 }
 
+.leftslider {
+  margin-left: 40px;
+}
+
+.rightslider {
+  margin-right: 40px;
+}
+
 @media screen and (min-width: 769px) {
   .trending {
     padding: 67px 0 182px 0;
@@ -567,21 +591,6 @@ li p {
   }
   .arrow {
     display: inline;
-  }
-  .carouselcontainer {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding: 0px 92px 0px 92px;
-    height: 275px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .placeholderdiv {
-    height: 275px;
-    width: 357px;
-    margin-right: 25px;
   }
 }
 

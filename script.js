@@ -1,17 +1,17 @@
-const menuBtn= document.querySelector(".menuIcon");
-const mobileUl= document.querySelector(".mobileUl");
-menuBtn.addEventListener("click", desplegarMenu);
-var imgTrack= "burger";
+// const menuBtn= document.querySelector(".menuIcon");
+// const mobileUl= document.querySelector(".mobileUl");
+// menuBtn.addEventListener("click", desplegarMenu);
+// var imgTrack= "burger";
 
-function desplegarMenu(){
+// function desplegarMenu(){
     
-    if(imgTrack=="burger"){
-        menuBtn.src="./images/assets/close.svg"; 
-        imgTrack="close"
-        mobileUl.classList.toggle("hidden");
-    }else{
-        menuBtn.src="./images/assets/burger.svg";
-        imgTrack= "burger";
-        mobileUl.classList.toggle("hidden");
-    }
-}
+//     if(imgTrack=="burger"){
+//         menuBtn.src="./images/assets/close.svg"; 
+//         imgTrack="close"
+//         mobileUl.classList.toggle("hidden");
+//     }else{
+//         menuBtn.src="./images/assets/burger.svg";
+//         imgTrack= "burger";
+//         mobileUl.classList.toggle("hidden");
+//     }
+// }
