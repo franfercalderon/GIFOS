@@ -41,3 +41,4 @@ var prevOffset= 0;
 var iterations = 0;
 var gifoResults= [];
 var imgTrack= "burger";
+var arrayTrendingGifos=[];

@@ -17,16 +17,24 @@ async function trendingTagsFn(){
 
 }
 
+//TRENDING CAROUSEL
+
 getTrendingGifos();
 
 //LLAMADA API PARA OBTENER TRENDING GIFOS
 async function getTrendingGifos(){
-    await fetch(apiTrendingEP + "?api_key=" + apiKey)
+    await fetch(apiTrendingEP + "?api_key=" + apiKey + "&limit=" + 6)
         .then(res=>{
             return(res.json())
         })
         .then(json=>{
-            console.log(json)
+            // console.log(json.data)
+            fillTredingGifos(json.data);
+            renderTrendingGifos(0);
+
+        })
+        .catch(err=>{
+            console.log(err)
         })
 }
 

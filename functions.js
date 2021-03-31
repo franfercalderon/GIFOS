@@ -110,22 +110,6 @@ function openMain(){
 
 }
 
-async function trendingTagsFn(){
-    //LLAMADA A API PARA TRAER TRENDING TAGS
-    await fetch(apiTrengingTagsEP + "?api_key=" + apiKey)
-        .then(response=>{
-            return(response.json())
-        })
-        .then(json=>{
-            // console.log(json)
-            fillTags(json.data)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-
-}
-
 function fillTags(array){
     //BORRA EL PLACEHOLDER
     trendingTags.innerHTML= "";
@@ -138,7 +122,6 @@ function fillTags(array){
     }
     // TAG LISTENERS
     tagListener();
-    
 }
 
 function tagListener(){
@@ -152,6 +135,46 @@ function tagListener(){
         })
     }
 }
+
+function renderTrendingGifos(offset){
+//RENDERIZA GIFOS EN CAROUSSEL
+    let trendingcontainer= document.querySelector(".trendingcontainer");
+    trendingcontainer.innerHTML="";
+    for(let i=offset; i<offset+3; i++){
+        let trendinggifodiv=document.createElement("div");
+        trendinggifodiv.classList.add("trendinggifo");
+        trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
+        <!--GENERA OVERLAY-->
+        <div class="overlay ">
+            <div class="overlaybuttons">
+                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                <img src="images/assets/icon-max-normal.svg" alt="">
+            </div>
+            <div class="overlayp">
+                <p class="overlayuser">${arrayTrendingGifos[i].user}</p>
+                <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
+            </div>
+        </div>`
+        trendingcontainer.appendChild(trendinggifodiv);
+        
+    }
+}
+
+
+function fillTredingGifos(array){
+    //LLENA EL ARRAY DE GIFOS RECIBIDOS DE API
+    for(let i=0; i<array.length; i++){
+        arrayTrendingGifos[i]= new GIFO(
+            i,
+            array[i].username,
+            array[i].title,
+            array[i].images.downsized.url
+        )
+    }
+}
+
+
 
 function hideSearch(){
     //ESCONDE SECCIÓN DE SUGERENCIAS Y ESTILIZA NUEVAMENTE LA SEARCHBAR
@@ -361,7 +384,7 @@ function fillGifoPreview(array, input){
             i+prevOffset,
             array[i].username,
             array[i].title,
-            array[i].images.original.url,
+            array[i].images.downsized.url,
         );
         gifoResults.push(newGifo);
     }
@@ -483,6 +506,7 @@ function maxGifo(url, title, user, origin){
 }
 
 //TRENDING CAROUSSEL
+
 
 //HOVER FLECHAS
 leftArrow.addEventListener("mouseover", ()=>{
