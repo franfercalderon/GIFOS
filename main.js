@@ -208,13 +208,27 @@ rightArrow.addEventListener("click", ()=>{
         renderTrendingGifos(trendingOffset);
     }
     else if(trendingOffset==3){
-        // console.log(trendingcontainer, trendinggifodiv);
+        trendingOffset++;
+        console.log(trendingOffset);
+        renderTrendingLoop(4,5,0)
+    }
+    else if(trendingOffset>3){
+        trendingOffset=-1;
+        console.log(trendingOffset+ "ultimo render antes del 0");
+        renderTrendingLoop(5,0,1);
+    }
 
-        // var trendingcontainer= document.querySelector(".trendingcontainer");
-        trendingcontainer.innerHTML="";
-        var trendinggifodiv=document.createElement("div");
+})
+
+function renderTrendingLoop(pos1, pos2, pos3){
+    // let pos0= arrayTrendingGifos.length-pos;
+    let newArrayTrendingGifos=[arrayTrendingGifos[pos1], arrayTrendingGifos[pos2], arrayTrendingGifos[pos3]];
+    let trendingcontainer= document.querySelector(".trendingcontainer");
+    trendingcontainer.innerHTML="";
+    for(let i=0; i<newArrayTrendingGifos.length; i++){
+        let trendinggifodiv=document.createElement("div");
         trendinggifodiv.classList.add("trendinggifo");
-        trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
+        trendinggifodiv.innerHTML=`<img src="${newArrayTrendingGifos[i].url}" alt="${newArrayTrendingGifos[i].title}">
         <!--GENERA OVERLAY-->
         <div class="overlaygifo hidden">
             <div class="overlaybuttons">
@@ -223,16 +237,17 @@ rightArrow.addEventListener("click", ()=>{
                 <img src="images/assets/icon-max-normal.svg" alt="">
             </div>
             <div class="trendingoverlayp">
-                <p class="overlayuser">${arrayTrendingGifos[i].author}</p>
-                <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
+                <p class="overlayuser">${newArrayTrendingGifos[i].author}</p>
+                <p class="overlaytitle">${newArrayTrendingGifos[i].title}</p>
             </div>
         </div>`
         trendingcontainer.appendChild(trendinggifodiv);
         showHover(trendinggifodiv);
         gifoButtons(trendinggifodiv, trendingSec);
     }
+}
 
-})
+
 
 
 

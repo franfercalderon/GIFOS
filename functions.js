@@ -138,10 +138,10 @@ function tagListener(){
 
 function renderTrendingGifos(offset){
 //RENDERIZA GIFOS EN CAROUSSEL
-    var trendingcontainer= document.querySelector(".trendingcontainer");
+    let trendingcontainer= document.querySelector(".trendingcontainer");
     trendingcontainer.innerHTML="";
     for(let i=offset; i<offset+3; i++){
-        var trendinggifodiv=document.createElement("div");
+        let trendinggifodiv=document.createElement("div");
         trendinggifodiv.classList.add("trendinggifo");
         trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
         <!--GENERA OVERLAY-->
