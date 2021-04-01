@@ -575,6 +575,35 @@ li p {
   margin-right: 40px;
 }
 
+.trendingoverlayp {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: "Roboto", sans-serif;
+  padding-left: 19px;
+}
+
+.trendingoverlayp .overlaytitle {
+  margin: 6px 0 40px 0;
+  color: white;
+  text-align: left;
+}
+
+.trendingoverlayp .overlayuser {
+  margin: 0;
+  color: white;
+  font-weight: 200;
+}
+
 @media screen and (min-width: 769px) {
   .trending {
     padding: 67px 0 182px 0;
@@ -591,6 +620,10 @@ li p {
   .arrow {
     display: inline;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 footer {

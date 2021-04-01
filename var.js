@@ -25,6 +25,7 @@ const rightArrow= document.querySelector(".rightslider");
     const searchResults= document.querySelector(".searchresults");
     const maxSec= document.querySelector(".maxsec");
     const favSec= document.querySelector(".favsec");
+    const trendingSec= document.querySelector(".trending");
 
     //LOGOS
     const fbLogo= document.querySelectorAll(".socialLogo")[0];
@@ -42,3 +43,4 @@ var iterations = 0;
 var gifoResults= [];
 var imgTrack= "burger";
 var arrayTrendingGifos=[];
+var trendingOffset=0;

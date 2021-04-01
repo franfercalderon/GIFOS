@@ -17,26 +17,6 @@ async function trendingTagsFn(){
 
 }
 
-//TRENDING CAROUSEL
-
-getTrendingGifos();
-
-//LLAMADA API PARA OBTENER TRENDING GIFOS
-async function getTrendingGifos(){
-    await fetch(apiTrendingEP + "?api_key=" + apiKey + "&limit=" + 6)
-        .then(res=>{
-            return(res.json())
-        })
-        .then(json=>{
-            // console.log(json.data)
-            fillTredingGifos(json.data);
-            renderTrendingGifos(0);
-
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-}
 
 //SEARCHBAR
 searchBar.addEventListener("input", ()=>{suggest(searchBar.value)});
@@ -168,6 +148,94 @@ function FAVGIFO(index, author, title, url){
 
     return this;
 }
+
+//TRENDING CAROUSSEL
+
+getTrendingGifos();
+
+//LLAMADA API PARA OBTENER TRENDING GIFOS
+async function getTrendingGifos(){
+    await fetch(apiTrendingEP + "?api_key=" + apiKey + "&limit=" + 6)
+        .then(res=>{
+            return(res.json())
+        })
+        .then(json=>{
+            // console.log(json.data)
+            fillTredingGifos(json.data);
+            renderTrendingGifos(0);
+
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+}
+
+//HOVER FLECHAS
+
+leftArrow.addEventListener("mouseover", ()=>{
+    leftArrow.src="images/assets/button-slider-left-hover.svg"
+});
+
+leftArrow.addEventListener("mouseleave", ()=>{
+    if(darkStatus==false){
+        leftArrow.src="images/assets/button-slider-left.svg";
+    }
+    else{
+        leftArrow.src="images/assets/button-slider-left-md-noct.svg";
+    }
+})
+
+rightArrow.addEventListener("mouseover", ()=>{
+    rightArrow.src="images/assets/button-slider-right-hover.svg";
+});
+
+rightArrow.addEventListener("mouseleave", ()=>{
+    if(darkStatus==false){
+        rightArrow.src="images/assets/button-slider-right.svg";
+    }
+    else{
+        rightArrow.src="images/assets/button-slider-right-md-noct.svg";
+    }
+});
+
+//FUNCIÓN FLECHAS
+
+rightArrow.addEventListener("click", ()=>{
+    if(trendingOffset<3){
+        // console.log(trendingOffset);
+        trendingOffset++;
+        console.log(trendingOffset);
+        renderTrendingGifos(trendingOffset);
+    }
+    else if(trendingOffset==3){
+        // console.log(trendingcontainer, trendinggifodiv);
+
+        // var trendingcontainer= document.querySelector(".trendingcontainer");
+        trendingcontainer.innerHTML="";
+        var trendinggifodiv=document.createElement("div");
+        trendinggifodiv.classList.add("trendinggifo");
+        trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
+        <!--GENERA OVERLAY-->
+        <div class="overlaygifo hidden">
+            <div class="overlaybuttons">
+                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                <img src="images/assets/icon-max-normal.svg" alt="">
+            </div>
+            <div class="trendingoverlayp">
+                <p class="overlayuser">${arrayTrendingGifos[i].author}</p>
+                <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
+            </div>
+        </div>`
+        trendingcontainer.appendChild(trendinggifodiv);
+        showHover(trendinggifodiv);
+        gifoButtons(trendinggifodiv, trendingSec);
+    }
+
+})
+
+
+
 
 
 

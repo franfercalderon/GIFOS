@@ -33,8 +33,8 @@ function enableDark(){
         fbLogo.src="./images/assets/icon_facebook_noc.svg";
         twLogo.src="./images/assets/icon_twitter_noc.svg";
         igLogo.src="./images/assets/icon_instagram_noc.svg";
-        document.querySelector(".leftslider").src="./images/assets/button-slider-left-md-noct.svg";
-        document.querySelector(".rightslider").src="./images/assets/button-slider-right-md-noct.svg";
+        leftArrow.src="./images/assets/button-slider-left-md-noct.svg";
+        rightArrow.src="./images/assets/button-slider-right-md-noct.svg";
         closeSearch.src="./images/assets/closedark.svg";
         searchBar.style.borderBottom="1px solid white";
         //ACTUALIZA VALOR DEL DARKSTATUS
@@ -48,8 +48,8 @@ function enableDark(){
         fbLogo.src="./images/assets/icon_facebook.svg";
         twLogo.src="./images/assets/icon-twitter.svg";
         igLogo.src="./images/assets/icon_instagram.svg";
-        document.querySelector(".leftslider").src="./images/assets/button-slider-left.svg";
-        document.querySelector(".rightslider").src="./images/assets/Button-Slider-right.svg";
+        leftArrow.src="./images/assets/button-slider-left.svg";
+        rightArrow.src="./images/assets/Button-Slider-right.svg";
         closeSearch.src="./images/assets/close.svg";
         searchBar.style.borderBottom="1px solid #572EE5"
         //ACTUALIZA VALOR DEL DARKSTATUS
@@ -138,29 +138,30 @@ function tagListener(){
 
 function renderTrendingGifos(offset){
 //RENDERIZA GIFOS EN CAROUSSEL
-    let trendingcontainer= document.querySelector(".trendingcontainer");
+    var trendingcontainer= document.querySelector(".trendingcontainer");
     trendingcontainer.innerHTML="";
     for(let i=offset; i<offset+3; i++){
-        let trendinggifodiv=document.createElement("div");
+        var trendinggifodiv=document.createElement("div");
         trendinggifodiv.classList.add("trendinggifo");
         trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
         <!--GENERA OVERLAY-->
-        <div class="overlay ">
+        <div class="overlaygifo hidden">
             <div class="overlaybuttons">
                 <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
                 <img src="images/assets/icon-download.svg" alt="ícono descargar">
                 <img src="images/assets/icon-max-normal.svg" alt="">
             </div>
-            <div class="overlayp">
-                <p class="overlayuser">${arrayTrendingGifos[i].user}</p>
+            <div class="trendingoverlayp">
+                <p class="overlayuser">${arrayTrendingGifos[i].author}</p>
                 <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
             </div>
         </div>`
         trendingcontainer.appendChild(trendinggifodiv);
+        showHover(trendinggifodiv);
+        gifoButtons(trendinggifodiv, trendingSec);
         
     }
 }
-
 
 function fillTredingGifos(array){
     //LLENA EL ARRAY DE GIFOS RECIBIDOS DE API
@@ -173,8 +174,6 @@ function fillTredingGifos(array){
         )
     }
 }
-
-
 
 function hideSearch(){
     //ESCONDE SECCIÓN DE SUGERENCIAS Y ESTILIZA NUEVAMENTE LA SEARCHBAR
@@ -296,7 +295,7 @@ function renderSearch(array, input){
         </div>`
     containerDiv.appendChild(gifoDiv);
     showHover(gifoDiv);
-    gifoButtons(gifoDiv);
+    gifoButtons(gifoDiv, searchResults);
     }
     iterations++;
     //LLAMA A FUNCION CREAR BOTON "VER MAS"
@@ -318,12 +317,13 @@ function renderSearch(array, input){
     }
 }
 
+
 function showHover(gifo){
     //MUESTRA OVERLAY CON HOVER
     gifo.addEventListener("mouseover", ()=>{
         gifo.querySelector(".overlaygifo").classList.remove("hidden");
     })
-    gifoDiv.addEventListener("mouseout", ()=>{
+    gifo.addEventListener("mouseout", ()=>{
         gifo.querySelector(".overlaygifo").classList.add("hidden");
     })
     //MAXIMIZA GIFO AL CLICK EN DISP MOVILES
@@ -334,7 +334,7 @@ function showHover(gifo){
     }
 }
 
-function gifoButtons(gifo){
+function gifoButtons(gifo, origin){
     let buttons= gifo.querySelectorAll(".overlaybuttons img");
     //HOVER LOGOS
     buttons[0].addEventListener("mouseover", ()=>{
@@ -372,7 +372,7 @@ function gifoButtons(gifo){
         });
         //MAXIMIZAR
         buttons[2].addEventListener("click", ()=>{
-            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, searchResults);
+            maxGifo(gifo.querySelector("img").src, gifo.querySelector(".overlaytitle").innerHTML, gifo.querySelector(".overlayuser").innerHTML, origin);
         })
 }
 
@@ -505,22 +505,7 @@ function maxGifo(url, title, user, origin){
     })
 }
 
-//TRENDING CAROUSSEL
 
-
-//HOVER FLECHAS
-leftArrow.addEventListener("mouseover", ()=>{
-    leftArrow.src="images/assets/button-slider-left-hover.svg"
-});
-leftArrow.addEventListener("mouseleave", ()=>{
-    leftArrow.src="images/assets/button-slider-left.svg"
-});
-rightArrow.addEventListener("mouseover", ()=>{
-    rightArrow.src="images/assets/button-slider-right-hover.svg"
-});
-rightArrow.addEventListener("mouseleave", ()=>{
-    rightArrow.src="images/assets/button-slider-right.svg"
-});
 
 
 

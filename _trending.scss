@@ -91,6 +91,28 @@
     margin-right: 40px;
 }
 
+.trendingoverlayp{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: $roboto;
+    padding-left: 19px;
+}
+
+.trendingoverlayp .overlaytitle{
+    margin: 6px 0 40px 0;
+    color: white;
+    text-align: left;
+}
+
+.trendingoverlayp .overlayuser{
+    margin: 0;
+    color: white;
+    font-weight: 200;
+}
+
 ////@at-root
 // .overlaygifo{
 //     background-color: #562ee5b2;
@@ -167,6 +189,10 @@
     //     width: 357px;
     //     margin-right: 25px;
     // }
+}
+
+.hidden{
+    display: none;
 }
 
 
