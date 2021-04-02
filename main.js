@@ -201,51 +201,43 @@ rightArrow.addEventListener("mouseleave", ()=>{
 //FUNCIÓN FLECHAS
 
 rightArrow.addEventListener("click", ()=>{
+    // trendingOffset++;
     if(trendingOffset<3){
-        // console.log(trendingOffset);
         trendingOffset++;
-        console.log(trendingOffset);
+        console.log("primer if "+ trendingOffset);
         renderTrendingGifos(trendingOffset);
     }
     else if(trendingOffset==3){
         trendingOffset++;
-        console.log(trendingOffset);
+        console.log("segundo if "+ trendingOffset);
         renderTrendingLoop(4,5,0)
     }
     else if(trendingOffset>3){
-        trendingOffset=-1;
-        console.log(trendingOffset+ "ultimo render antes del 0");
+        trendingOffset++;
+        console.log("tercer if "+ trendingOffset);
         renderTrendingLoop(5,0,1);
+        trendingOffset=-1;
     }
 
 })
 
-function renderTrendingLoop(pos1, pos2, pos3){
-    // let pos0= arrayTrendingGifos.length-pos;
-    let newArrayTrendingGifos=[arrayTrendingGifos[pos1], arrayTrendingGifos[pos2], arrayTrendingGifos[pos3]];
-    let trendingcontainer= document.querySelector(".trendingcontainer");
-    trendingcontainer.innerHTML="";
-    for(let i=0; i<newArrayTrendingGifos.length; i++){
-        let trendinggifodiv=document.createElement("div");
-        trendinggifodiv.classList.add("trendinggifo");
-        trendinggifodiv.innerHTML=`<img src="${newArrayTrendingGifos[i].url}" alt="${newArrayTrendingGifos[i].title}">
-        <!--GENERA OVERLAY-->
-        <div class="overlaygifo hidden">
-            <div class="overlaybuttons">
-                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
-                <img src="images/assets/icon-download.svg" alt="ícono descargar">
-                <img src="images/assets/icon-max-normal.svg" alt="">
-            </div>
-            <div class="trendingoverlayp">
-                <p class="overlayuser">${newArrayTrendingGifos[i].author}</p>
-                <p class="overlaytitle">${newArrayTrendingGifos[i].title}</p>
-            </div>
-        </div>`
-        trendingcontainer.appendChild(trendinggifodiv);
-        showHover(trendinggifodiv);
-        gifoButtons(trendinggifodiv, trendingSec);
+leftArrow.addEventListener("click", ()=>{
+    if(trendingOffset==0){
+        renderTrendingLoop(5,0,1);
+        trendingOffset=-1;
+        console.log(trendingOffset);
     }
-}
+    else if(trendingOffset<0){
+        renderTrendingLoop(4,5,0);
+        trendingOffset=arrayTrendingGifos.length-2;
+    }
+    else if(trendingOffset>0){
+        trendingOffset=trendingOffset-1;
+        renderTrendingGifos(trendingOffset);
+    }
+})
+
+
 
 
 

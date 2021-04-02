@@ -135,33 +135,7 @@ function tagListener(){
         })
     }
 }
-
-function renderTrendingGifos(offset){
-//RENDERIZA GIFOS EN CAROUSSEL
-    let trendingcontainer= document.querySelector(".trendingcontainer");
-    trendingcontainer.innerHTML="";
-    for(let i=offset; i<offset+3; i++){
-        let trendinggifodiv=document.createElement("div");
-        trendinggifodiv.classList.add("trendinggifo");
-        trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
-        <!--GENERA OVERLAY-->
-        <div class="overlaygifo hidden">
-            <div class="overlaybuttons">
-                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
-                <img src="images/assets/icon-download.svg" alt="ícono descargar">
-                <img src="images/assets/icon-max-normal.svg" alt="">
-            </div>
-            <div class="trendingoverlayp">
-                <p class="overlayuser">${arrayTrendingGifos[i].author}</p>
-                <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
-            </div>
-        </div>`
-        trendingcontainer.appendChild(trendinggifodiv);
-        showHover(trendinggifodiv);
-        gifoButtons(trendinggifodiv, trendingSec);
-        
-    }
-}
+//TRENDING GIFOS
 
 function fillTredingGifos(array){
     //LLENA EL ARRAY DE GIFOS RECIBIDOS DE API
@@ -174,6 +148,61 @@ function fillTredingGifos(array){
         )
     }
 }
+
+function renderTrendingGifos(offset){
+    //RENDERIZA GIFOS EN CAROUSSEL
+        let trendingcontainer= document.querySelector(".trendingcontainer");
+        trendingcontainer.innerHTML="";
+        for(let i=offset; i<offset+3; i++){
+            let trendinggifodiv=document.createElement("div");
+            trendinggifodiv.classList.add("trendinggifo");
+            trendinggifodiv.innerHTML=`<img src="${arrayTrendingGifos[i].url}" alt="${arrayTrendingGifos[i].title}">
+            <!--GENERA OVERLAY-->
+            <div class="overlaygifo hidden">
+                <div class="overlaybuttons">
+                    <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                    <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                    <img src="images/assets/icon-max-normal.svg" alt="">
+                </div>
+                <div class="trendingoverlayp">
+                    <p class="overlayuser">${arrayTrendingGifos[i].author}</p>
+                    <p class="overlaytitle">${arrayTrendingGifos[i].title}</p>
+                </div>
+            </div>`
+            trendingcontainer.appendChild(trendinggifodiv);
+            showHover(trendinggifodiv);
+            gifoButtons(trendinggifodiv, trendingSec);
+            
+        }
+    }
+    
+function renderTrendingLoop(pos1, pos2, pos3){
+    //RENDERIZA TRENDING GIFOS DE CARROUSEL EN LOOP 
+    let newArrayTrendingGifos=[arrayTrendingGifos[pos1], arrayTrendingGifos[pos2], arrayTrendingGifos[pos3]];
+    let trendingcontainer= document.querySelector(".trendingcontainer");
+    trendingcontainer.innerHTML="";
+    for(let i=0; i<newArrayTrendingGifos.length; i++){
+        let trendinggifodiv=document.createElement("div");
+        trendinggifodiv.classList.add("trendinggifo");
+        trendinggifodiv.innerHTML=`<img src="${newArrayTrendingGifos[i].url}" alt="${newArrayTrendingGifos[i].title}">
+        <!--GENERA OVERLAY-->
+        <div class="overlaygifo hidden">
+            <div class="overlaybuttons">
+                <img src="images/assets/icon-fav.svg" alt="ícono favoritos">
+                <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                <img src="images/assets/icon-max-normal.svg" alt="">
+            </div>
+            <div class="trendingoverlayp">
+                <p class="overlayuser">${newArrayTrendingGifos[i].author}</p>
+                <p class="overlaytitle">${newArrayTrendingGifos[i].title}</p>
+            </div>
+        </div>`
+        trendingcontainer.appendChild(trendinggifodiv);
+        showHover(trendinggifodiv);
+        gifoButtons(trendinggifodiv, trendingSec);
+    }
+}
+    
 
 function hideSearch(){
     //ESCONDE SECCIÓN DE SUGERENCIAS Y ESTILIZA NUEVAMENTE LA SEARCHBAR
