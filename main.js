@@ -45,7 +45,8 @@ switchDarkDesktop.addEventListener("click", ()=>{
     }
 })
 
-//HOVER SOCIAL MEDIA LOGOS
+//SOCIAL MEDIA HOVER
+
 fbLogo.addEventListener("mouseover", ()=>{
     fbLogo.src= "./images/assets/icon_facebook_hover.svg";
 })
@@ -81,6 +82,22 @@ igLogo.addEventListener("mouseout", ()=>{
         igLogo.src= "./images/assets/icon_instagram_noc.svg";
     }
 })
+
+//SOCIAL MEDIA CLICK
+
+fbLogo.addEventListener("click", ()=>{
+    window.open("https://www.facebook.com/", "_blank");
+});
+
+twLogo.addEventListener("click", ()=>{
+    window.open("https://www.twitter.com/", "_blank");
+})
+
+igLogo.addEventListener("click", ()=>{
+    window.open("https://www.instagram.com/franfercalderon/", "_blank");
+});
+
+
 
 //MENU HAMBURGUESA
 menuBtn.addEventListener("click", desplegarMenu);

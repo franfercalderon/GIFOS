@@ -22,17 +22,17 @@
     margin: 0 25px 32px 25px;
 }
 
-.arrow{
+.leftarrowcontainer{
     display: none;
 }
 
 .carouselcontainer{
     display: flex;
-    height: 275px;
-    // background-color: red;
+    height: 187px;
+    overflow-x: scroll;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 100vw;
 }
 
 .trendingcontainer{
@@ -41,10 +41,6 @@
 }
 
 .trendinggifo{
-    // max-width: 357px;
-    // width: 357px;
-    // height: 275px;
-    // max-height: 275px;
     position: relative;
     height: fit-content;
     margin-right: 29px;
@@ -52,19 +48,14 @@
 }
 
 .trendinggifo img{
-    // width: 100%;
-    // height: 100%;
-    width: 22rem;
-  height: 17rem;
+    width: 15rem;
+  height: 11rem;
 }
 
 .trendinggifo:last-child{
     margin-right: 0;
 }
 
-// .trendingcontainer :last-child{
-//     margin-right: 0px;
-// }
 
 .tagspan{
     text-transform: capitalize;
@@ -88,7 +79,7 @@
 }
 
 .rightslider{
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .trendingoverlayp{
@@ -113,50 +104,6 @@
     font-weight: 200;
 }
 
-////@at-root
-// .overlaygifo{
-//     background-color: #562ee5b2;
-
-//     // padding-right: 10px;
-//     position: absolute;
-//     top: 0;
-//     height: 100%;
-//     width: 100%;
-// }
-
-// .overlaybuttons{
-//     position: absolute;
-//     right: 0;
-//     margin-top: 8px;
-// }
-
-// .overlaybuttons img{
-//     width: 28px;
-//     height: auto;
-//     margin-right: 8px;
-// }
-
-// .overlayp{
-//     width: 100%;
-//     position: absolute;
-//     bottom: 0;
-//     color: white;
-//     font-family: $roboto;
-//     padding: 0 8px 10px 8px;
-//     text-transform: capitalize;
-// }
-
-// .overlaytitle{
-//     margin-top: 3px;
-//     font-size: 14px;
-//     font-weight: 500;
-// }
-
-// .overlayuser{
-//     font-size: 12px;
-//     font-weight: 300;
-// }
-///////@at-root
 
 @media screen and (min-width: 769px){
     .trending{
@@ -174,21 +121,26 @@
         color: black;
     }
 
-    .arrow{
+
+    .leftarrowcontainer{
         display: inline;
     }
 
-    // .carouselcontainer{
-    //     justify-content: space-between;
-    //     padding: 0px 92px 0px 92px;
-    //     height: 275px;
-    //     align-items: center;
-    // }
-    // .placeholderdiv{
-    //     height: 275px;
-    //     width: 357px;
-    //     margin-right: 25px;
-    // }
+    .carouselcontainer{
+        display: flex;
+        height: 275px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .trendinggifo img{
+        width: 22rem;
+        height: 17rem;
+    }
+    .rightslider{
+        margin-right: 40px;
+    }
+
 }
 
 .hidden{

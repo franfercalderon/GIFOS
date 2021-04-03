@@ -505,7 +505,7 @@ li p {
   margin: 0 25px 32px 25px;
 }
 
-.arrow {
+.leftarrowcontainer {
   display: none;
 }
 
@@ -513,14 +513,15 @@ li p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 275px;
+  height: 187px;
+  overflow-x: scroll;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
+  width: 100vw;
 }
 
 .trendingcontainer {
@@ -542,8 +543,8 @@ li p {
 }
 
 .trendinggifo img {
-  width: 22rem;
-  height: 17rem;
+  width: 15rem;
+  height: 11rem;
 }
 
 .trendinggifo:last-child {
@@ -572,7 +573,7 @@ li p {
 }
 
 .rightslider {
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .trendingoverlayp {
@@ -617,8 +618,28 @@ li p {
     font-size: 18px;
     color: black;
   }
-  .arrow {
+  .leftarrowcontainer {
     display: inline;
+  }
+  .carouselcontainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 275px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+  }
+  .trendinggifo img {
+    width: 22rem;
+    height: 17rem;
+  }
+  .rightslider {
+    margin-right: 40px;
   }
 }
 

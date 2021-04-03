@@ -22,6 +22,7 @@ function desplegarMenu(){
 }
 
 function enableDark(){
+    // var darkStatus= false;
     //AGREGA O QUITA LA CLASE "DARK" AL BODY
     body.classList.toggle("dark");
     if(darkStatus==false){
@@ -37,8 +38,12 @@ function enableDark(){
         rightArrow.src="./images/assets/button-slider-right-md-noct.svg";
         closeSearch.src="./images/assets/closedark.svg";
         searchBar.style.borderBottom="1px solid white";
+        document.querySelector(".favbtndesktop").style.color="white";
+
+        // favBtnDesktop.style.color="#572EE5";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
+        localStorage.setItem("DARKSTATUS", "true");
     }else{
         console.log("Sun is up!");
         //CAMBIO DE SRC DE ELEMENTOS
@@ -51,11 +56,34 @@ function enableDark(){
         leftArrow.src="./images/assets/button-slider-left.svg";
         rightArrow.src="./images/assets/Button-Slider-right.svg";
         closeSearch.src="./images/assets/close.svg";
-        searchBar.style.borderBottom="1px solid #572EE5"
+        searchBar.style.borderBottom="1px solid #572EE5";
+        
+        document.querySelector(".favbtndesktop").style.color="#572EE5";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
+        localStorage.setItem("DARKSTATUS", "false");
     }
 }
+
+//LOCAL STORAGE DARK MODE
+function isItDark(){
+    if(localStorage.getItem("DARKSTATUS")=="true"){
+        enableDark();
+    }
+}
+isItDark();
+
+// if(localStorage.hasOwnProperty("DARKSTATUS")){
+//     darkStatus=JSON.parse(localStorage.getItem("DARKSTATUS"));
+//     if(darkStatus==true){
+//         enableDark();
+//     }
+// }
+// localStorage.setItem("FAVGIFS", JSON.stringify(favArray));
+
+// f(localStorage.hasOwnProperty("FAVGIFS")){
+//     favArray=JSON.parse(localStorage.getItem("FAVGIFS"))
+// }
 
 //  MOSTRAR SECTION FAVORITOS
 function openFavSec(){
@@ -76,10 +104,10 @@ function openFavSec(){
         //CHEQUEA DARK MODE
         if(darkStatus==false){
             menuBtn.src="./images/assets/burger.svg";
+            document.querySelector(".favbtndesktop").style.color="#9CAFC3";
         }else{
             menuBtn.src="./images/assets/burgerdark.svg";
         }
-        document.querySelector(".favbtndesktop").style.color="#9CAFC3";
         favOpen=true;
     }
     else{
@@ -88,7 +116,13 @@ function openFavSec(){
         mygifosSec.classList.remove("hidden");
         maxSec.classList.remove("hidden");
         searchResults.classList.remove("hidden");
-        document.querySelector(".favbtndesktop").style.color="#572EE5";
+        //CHEQUEA DARK MODE
+        if(darkStatus==false){
+            document.querySelector(".favbtndesktop").style.color="#572EE5";
+        }
+        else{
+            document.querySelector(".favbtndesktop").style.color="white";
+        }
         favOpen=false;
     }
 }
