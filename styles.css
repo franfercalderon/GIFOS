@@ -1176,4 +1176,263 @@ footer {
     margin-left: 10px;
   }
 }
+
+.recordlevel {
+  width: 100%;
+  height: 390px;
+  margin: 4px 0 24px 0;
+}
+
+.sides {
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+}
+
+.center {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 48%;
+  height: 100%;
+  border: 1px solid #572EE5;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.corner {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.corner:first-child {
+  top: 20px;
+  left: 20px;
+  border: 1px solid #50E3C2;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner:nth-child(2) {
+  top: 20px;
+  right: 20px;
+  border: 1px solid #50E3C2;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner:nth-child(3) {
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #50E3C2;
+  border-left: none;
+  border-top: none;
+}
+
+.corner:nth-child(4) {
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid #50E3C2;
+  border-right: none;
+  border-top: none;
+}
+
+.centertextcontainer {
+  position: absolute;
+  text-align: center;
+  width: 380px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.centertextcontainer p:first-child {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: #572EE5;
+  font-weight: 600;
+}
+
+.centertextcontainer p:first-child span {
+  color: #50E3C2;
+}
+
+.centertextcontainer p:nth-child(2) {
+  margin: 25px 0 12px 0;
+}
+
+.cameraside {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.wholecamcontainer {
+  margin-left: 25%;
+  position: relative;
+  margin-top: 35%;
+}
+
+.uppercam {
+  z-index: 1;
+  position: fixed;
+}
+
+.lowercam {
+  position: fixed;
+  margin-top: 15px;
+  z-index: 0;
+}
+
+.uppercam img:first-child {
+  width: 46px;
+  -webkit-animation: circulo 6s infinite linear;
+          animation: circulo 6s infinite linear;
+}
+
+.uppercam img:last-child {
+  width: 64px;
+  -webkit-animation: circulo 6s infinite linear;
+          animation: circulo 6s infinite linear;
+  animation-direction: reverse;
+}
+
+.lowercam img:first-child {
+  width: 114px;
+  margin-left: 8.8px;
+}
+
+.lowercam img:last-child {
+  width: 80px;
+  margin-bottom: 10px;
+  -webkit-animation: parpadea 2s infinite;
+          animation: parpadea 2s infinite;
+}
+
+@-webkit-keyframes circulo {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes circulo {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes parpadea {
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes parpadea {
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.rightfilm {
+  width: 141px;
+  margin-left: 14%;
+}
+
+.buttonslevel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.countercont {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.countercont div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #572EE5;
+  border-radius: 50%;
+  color: #572EE5;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.countercont div:nth-child(2) {
+  margin: 0 26px 0 26px;
+}
+
+.buttonsline {
+  width: 796px;
+  height: 7px;
+  background-color: #572EE5;
+  border-radius: 8px;
+  margin: 19px 0 20px 0;
+}
+
+.createmainbutton {
+  width: 127px;
+  height: 50px;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  margin-bottom: 26px;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #572EE5;
+}
 /*# sourceMappingURL=styles.css.map */

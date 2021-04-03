@@ -1,0 +1,210 @@
+.recordlevel{
+    width: 100%;
+    height: 390px;
+    margin: 4px 0 24px 0;
+}
+.sides{
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+}
+
+.center{
+    display: inline-flex;
+    position: relative;
+    width: 48%;
+    height: 100%;
+    border: 1px solid $mainviolet;
+    justify-content: center;
+    align-items: center;
+}
+
+// .centercontainer{
+//     position: relative;
+// }
+
+.corner{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}
+
+.corner:first-child{
+    top: 20px;
+    left: 20px;
+    border: 1px solid $maingreen;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner:nth-child(2){
+    top: 20px;
+    right: 20px;
+    border: 1px solid $maingreen;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner:nth-child(3){
+    bottom: 20px;
+    right: 20px;
+    border: 1px solid $maingreen;
+    border-left: none;
+    border-top: none;
+}
+
+.corner:nth-child(4){
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid $maingreen;
+    border-right: none;
+    border-top: none;
+}
+
+.centertextcontainer{
+    position: absolute;
+    text-align: center;
+    width: 380px;
+    font-family: $roboto;
+    font-size: 16px;
+    color: black;
+}
+.centertextcontainer p:first-child{
+    font-family: $mont;
+    font-size: 25px;
+    color: $mainviolet;
+    font-weight: 600;
+
+}
+
+.centertextcontainer p:first-child span{
+    color: $maingreen;
+}
+
+.centertextcontainer p:nth-child(2){
+    margin:25px 0 12px 0;
+}
+
+
+.cameraside{
+    display: inline-flex;
+}
+
+.wholecamcontainer{
+    margin-left: 25%;
+    position: relative;
+    margin-top: 35%;
+}
+
+.uppercam{
+    z-index: 1;
+    position: fixed;
+}
+
+.lowercam{
+    position: fixed;
+    margin-top: 15px;
+    z-index: 0;
+}
+
+.uppercam img:first-child{
+    width: 46px;
+    animation: circulo 6s infinite linear;
+}
+
+.uppercam img:last-child{
+    width: 64px;
+    animation: circulo 6s infinite linear;
+    animation-direction: reverse;
+}
+
+.lowercam img:first-child{
+    width: 114px;
+    margin-left: 8.8px;
+}
+
+.lowercam img:last-child{
+    width: 80px;
+    margin-bottom: 10px;
+    animation: parpadea 2s infinite;
+}
+
+@keyframes circulo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes parpadea {
+    25%{
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.4;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+
+.rightfilm{
+    width: 141px;
+    margin-left: 14%;
+}
+
+.buttonslevel{
+    width: 100%;
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countercont{
+    display: inline-flex;
+}
+
+.countercont div{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $mainviolet;
+    border-radius: 50%;
+    color: $mainviolet;
+    font-family: $roboto;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.countercont div:nth-child(2){
+    margin: 0 26px 0 26px;
+}
+
+.buttonsline{
+    width: 796px;
+    height: 7px;
+    background-color: $mainviolet;
+    border-radius: 8px;
+    margin: 19px 0 20px 0;
+}
+
+.createmainbutton{
+    width: 127px;
+    height: 50px;
+    border: 1px solid $mainviolet;
+    border-radius: 25px;
+    margin-bottom: 26px;
+    background-color: white;
+    font-family: $mont;
+    font-weight: 600;
+    font-size: 13px;
+    color: $mainviolet;
+}
+

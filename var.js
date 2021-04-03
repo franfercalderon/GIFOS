@@ -5,8 +5,6 @@ const mobileUl= document.querySelector(".mobileUl");
 const body=document.body;
 const switchDarkMobile= document.querySelector(".switchDarkMobile");
 const switchDarkDesktop=document.querySelector(".switchDarkDesktop");
-const mainLogo= document.querySelector(".logo");
-const newLogo= document.querySelector(".newGifoBtn");
 const searchIcon= document.querySelector(".searchicon");
 const closeSearch= document.querySelector(".closesearch");
 const favBtnMobile=document.querySelector('favbtn');
@@ -32,7 +30,9 @@ const rightArrow= document.querySelector(".rightslider");
     const fbLogo= document.querySelectorAll(".socialLogo")[0];
     const twLogo= document.querySelectorAll(".socialLogo")[1];
     const igLogo= document.querySelectorAll(".socialLogo")[2];
+    const mainLogo= document.querySelector(".logo");
     const newGifoBtnHover= document.querySelector(".newGifoBtnHover");
+    const newLogo= document.querySelector(".newGifoBtn");
 
 
 //VARIABLES

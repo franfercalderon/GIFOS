@@ -58,7 +58,7 @@ function enableDark(){
         rightArrow.src="./images/assets/Button-Slider-right.svg";
         closeSearch.src="./images/assets/close.svg";
         searchBar.style.borderBottom="1px solid #572EE5";
-        newGifoBtnHover.src="images/assets/CTA-crear-gifo-hover.svg";
+        newGifoBtnHover.src=newLogo.src;
         
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         //ACTUALIZA VALOR DEL DARKSTATUS
