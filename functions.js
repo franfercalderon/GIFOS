@@ -38,9 +38,10 @@ function enableDark(){
         rightArrow.src="./images/assets/button-slider-right-md-noct.svg";
         closeSearch.src="./images/assets/closedark.svg";
         searchBar.style.borderBottom="1px solid white";
-        document.querySelector(".favbtndesktop").style.color="white";
+        newGifoBtnHover.src="images/assets/CTA-crear-gifo-active.svg";
 
-        // favBtnDesktop.style.color="#572EE5";
+        document.querySelector(".favbtndesktop").style.color="white";
+        
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
         localStorage.setItem("DARKSTATUS", "true");
@@ -57,6 +58,7 @@ function enableDark(){
         rightArrow.src="./images/assets/Button-Slider-right.svg";
         closeSearch.src="./images/assets/close.svg";
         searchBar.style.borderBottom="1px solid #572EE5";
+        newGifoBtnHover.src="images/assets/CTA-crear-gifo-hover.svg";
         
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         //ACTUALIZA VALOR DEL DARKSTATUS
@@ -113,7 +115,7 @@ function openFavSec(){
     else{
         mainSec.classList.remove("hidden");
         favSec.classList.add("hidden");
-        mygifosSec.classList.remove("hidden");
+        // mygifosSec.classList.remove("hidden");
         maxSec.classList.remove("hidden");
         searchResults.classList.remove("hidden");
         //CHEQUEA DARK MODE

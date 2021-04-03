@@ -9,7 +9,6 @@ const mainLogo= document.querySelector(".logo");
 const newLogo= document.querySelector(".newGifoBtn");
 const searchIcon= document.querySelector(".searchicon");
 const closeSearch= document.querySelector(".closesearch");
-const mygifosSec= document.querySelector(".mygifossec");
 const favBtnMobile=document.querySelector('favbtn');
 const favBtnDesktop=document.querySelector('favbtn');
 const trendingTags=document.querySelector(".tagspan");
@@ -26,11 +25,14 @@ const rightArrow= document.querySelector(".rightslider");
     const maxSec= document.querySelector(".maxsec");
     const favSec= document.querySelector(".favsec");
     const trendingSec= document.querySelector(".trending");
+    const mygifosSec= document.querySelector(".mygifossec");
+    const createSec= document.querySelector(".createsec");
 
     //LOGOS
     const fbLogo= document.querySelectorAll(".socialLogo")[0];
     const twLogo= document.querySelectorAll(".socialLogo")[1];
     const igLogo= document.querySelectorAll(".socialLogo")[2];
+    const newGifoBtnHover= document.querySelector(".newGifoBtnHover");
 
 
 //VARIABLES
@@ -44,3 +46,4 @@ var gifoResults= [];
 var imgTrack= "burger";
 var arrayTrendingGifos=[];
 var trendingOffset=0;
+var createOpen= false;

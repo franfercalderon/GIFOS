@@ -122,6 +122,14 @@ document.querySelector(".logo").addEventListener("click", openMain);
 document.querySelector(".favbtnmobile").addEventListener("click", openFavSec);
 document.querySelector(".favbtndesktop").addEventListener("click", openFavSec);
 
+//MUESTRA SECCION MIS GIFOS
+
+//MUESTRA SECCIÓN CREATE
+
+newGifoBtnHover.addEventListener("click", ()=>{
+    openCreate();
+});
+
 //BUSQUEDA ON CLICK LOGO LUPA
 searchIcon.addEventListener("click",doSearch);
 
