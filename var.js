@@ -17,6 +17,9 @@ const mainTrending= document.querySelector(".mainTrending");
 const leftArrow= document.querySelector(".leftslider");
 const rightArrow= document.querySelector(".rightslider");
 
+    //BOTONES
+    const StartBtn= document.querySelector(".createmainbutton");
+
     //SECCIONES
     const mainSec= document.querySelector(".main");
     const searchResults= document.querySelector(".searchresults");
