@@ -19,6 +19,9 @@ const rightArrow= document.querySelector(".rightslider");
 
     //BOTONES
     const StartBtn= document.querySelector(".createmainbutton");
+    const myGifosDkp= document.querySelector(".mygifosbtndesktop");
+    const myGifosMbl= document.querySelector(".mygifosbtnmobile");
+
 
     //SECCIONES
     const mainSec= document.querySelector(".main");
@@ -43,10 +46,12 @@ const rightArrow= document.querySelector(".rightslider");
 var menuOpen= false;
 var darkStatus= false;
 var favOpen= false;
+var myGifosOpen= false;
+var createOpen= false;
 var prevOffset= 0;
 var iterations = 0;
 var gifoResults= [];
 var imgTrack= "burger";
 var arrayTrendingGifos=[];
+var arrayMyGifos=[];
 var trendingOffset=0;
-var createOpen= false;

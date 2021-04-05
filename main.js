@@ -123,6 +123,15 @@ document.querySelector(".favbtnmobile").addEventListener("click", openFavSec);
 document.querySelector(".favbtndesktop").addEventListener("click", openFavSec);
 
 //MUESTRA SECCION MIS GIFOS
+myGifosDkp.addEventListener("click", ()=>{
+    openMyGifos();
+})
+
+myGifosMbl.addEventListener("click", ()=>{
+    openMyGifos();
+    desplegarMenu();
+
+})
 
 //MUESTRA SECCIÓN CREATE
 
