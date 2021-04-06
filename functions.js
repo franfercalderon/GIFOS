@@ -39,8 +39,16 @@ function enableDark(){
         closeSearch.src="./images/assets/closedark.svg";
         searchBar.style.borderBottom="1px solid white";
         newGifoBtnHover.src="images/assets/CTA-crear-gifo-active.svg";
-
-        // document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+        // if(menuOpen==true){
+        //     menuBtn.src="images/assets/burger.svg"
+        // }
+        // else{
+        //     menuBtn.src="images/assets/close.svg"
+        // }
+        document.querySelector(".uppercam img:first-child").src="images/assets/element_cinta1-modo-noc.svg";
+        document.querySelector(".uppercam img:nth-child(2)").src="images/assets/element_cinta2-modo-noc.svg";
+        document.querySelector(".lowercam img:first-child").src="images/assets/camara-nm.svg";
+        document.querySelector(".rightfilm").src="images/assets/pelicula-modo-noc.svg";
 
         document.querySelector(".favbtndesktop").style.color="white";
         document.querySelector(".mygifosbtndesktop").style.color="white";
@@ -63,7 +71,11 @@ function enableDark(){
         closeSearch.src="./images/assets/close.svg";
         searchBar.style.borderBottom="1px solid #572EE5";
         newGifoBtnHover.src=newLogo.src;
-        
+        document.querySelector(".uppercam img:first-child").src="images/assets/element_cinta1.svg";
+        document.querySelector(".uppercam img:nth-child(2)").src="images/assets/element_cinta2.svg";
+        document.querySelector(".lowercam img:first-child").src="images/assets/element-camara.svg";
+        document.querySelector(".rightfilm").src="images/assets/pelicula.svg"
+
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
 

@@ -53,5 +53,4 @@ var iterations = 0;
 var gifoResults= [];
 var imgTrack= "burger";
 var arrayTrendingGifos=[];
-var arrayMyGifos=[];
 var trendingOffset=0;

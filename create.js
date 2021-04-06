@@ -1,3 +1,5 @@
+var arrayMyGifos=[];
+
 function openCreate(){
     if (createOpen==false){
         mainSec.classList.add("hidden");
@@ -77,7 +79,7 @@ async function getCam(){
     }
     else{
         document.querySelector(".countercont div:first-child").style.background="white";
-        document.querySelector(".countercont div:first-child").style.color="572EE5";
+        document.querySelector(".countercont div:first-child").style.color="#572EE5";
         document.querySelector(".countercont div:nth-child(2)").style.background="#572EE5";
         document.querySelector(".countercont div:nth-child(2)").style.color="white";
     }
@@ -124,7 +126,7 @@ async function getCam(){
                     createoverlay.classList.add("createoverlay");
                     center.appendChild(createoverlay);
                     createoverlay.innerHTML=`<img src="images/assets/loader.svg" alt="cargando">
-                    <p>Estamos subiendo tu GIFO</p>`
+                    <p>Estamos subiendo tu GIFO...</p>`
                     //DETIENE LA GRABACIÓN
                     recorder.stopRecording();
                     let form = new FormData();
@@ -154,10 +156,10 @@ async function getCam(){
                                         localStorage.setItem("MYGIFOS", JSON.stringify(arrayMyGifos));
                                     })
                                     createoverlay.querySelector("img").src="images/assets/ok.svg";
-                                    createoverlay.querySelector("p").innerHTML= "GIFO subido con éxito!";
+                                    createoverlay.querySelector("p").innerHTML= "GIFO subido con éxito!<br>\Te dirigiremos a la sección de tus GIFOS!";
                                     setTimeout(() => {
                                         openMyGifos(openCreate());
-                                    }, 2000);
+                                    }, 3000);
 
                             })
                     }
@@ -204,10 +206,11 @@ function MYGIFO(index, author, title, url){
 
 //FUNCTION OPEN MYGIFOS
 function openMyGifos(origin){
+    
     if(myGifosOpen==false){
         mainSec.classList.add("hidden");
         searchResults.classList.add("hidden");
-        maxSec.classList.add("hidden");
+        // maxSec.classList.add("hidden");
         mygifosSec.classList.remove("hidden");
         createSec.classList.add("hidden");
         favSec.classList.add("hidden");
@@ -247,6 +250,88 @@ function openMyGifos(origin){
         //ACTUALIZA GIFOSOPEN STATUS
         myGifosOpen=false;
 
-
     }
 }
+function retrieveMyGifos(){
+    if(localStorage.hasOwnProperty("MYGIFOS")){
+        arrayMyGifos=JSON.parse(localStorage.getItem("MYGIFOS"))
+    }
+}
+
+retrieveMyGifos();
+
+
+function renderMy(){
+    if(arrayMyGifos.length==0){
+        document.querySelector(".nomy").classList.remove("hidden");
+    }
+    else{
+        document.querySelector(".nomy").classList.add("hidden");
+        document.querySelector(".mycontainer").innerHTML="";
+        for(let i=0; i<arrayMyGifos.length; i++){
+            let mydiv = document.createElement("div");
+            mydiv.classList.add("mydiv");
+            document.querySelector(".mycontainer").appendChild(mydiv);
+            mydiv.innerHTML=`<img src=${arrayMyGifos[i].url} alt="${arrayMyGifos[i].title}">
+            <div class="overlaygifo hidden">
+                <div class="overlayfavbuttons">
+                    <img src="images/assets/icon-trash.svg" alt="ícono borrar">
+                    <img src="images/assets/icon-download.svg" alt="ícono descargar">
+                    <img src="images/assets/icon-max-normal.svg" alt="">
+                </div>
+                <div class="overlayp">
+                    <p class="overlayuser">${arrayMyGifos[i].author}</p>
+                    <p class="overlaytitle">${arrayMyGifos[i].title}</p>
+                </div>
+            </div>`
+            //HOVER OVERLAY
+            mydiv.addEventListener("mouseover", ()=>{
+                mydiv.querySelector(".overlaygifo").classList.remove("hidden");
+            })
+            mydiv.addEventListener("mouseout", ()=>{
+                mydiv.querySelector(".overlaygifo").classList.add("hidden");
+            })
+            //HOVER BOTONES
+            let favbtns= mydiv.querySelectorAll(".overlayfavbuttons img");
+            favbtns[0].addEventListener("mouseover", ()=>{
+                favbtns[0].src="./images/assets/icon-trash-hover.svg";
+            })
+            favbtns[0].addEventListener("mouseleave", ()=>{
+                favbtns[0].src="./images/assets/icon-trash.svg";
+            })
+            favbtns[1].addEventListener("mouseover", ()=>{
+                favbtns[1].src="./images/assets/icon-download-hover.svg";
+            })
+            favbtns[1].addEventListener("mouseleave", ()=>{
+                favbtns[1].src="./images/assets/icon-download.svg"
+            })
+            favbtns[2].addEventListener("mouseover", ()=>{
+                favbtns[2].src="./images/assets/icon-max-hover.svg"
+            })
+            favbtns[2].addEventListener("mouseleave", ()=>{
+                favbtns[2].src="./images/assets/icon-max-normal.svg"
+            })
+            //BORRAR MY GIFOS
+            favbtns[0].addEventListener("click", ()=>{
+                arrayMyGifos.splice([i],1);
+                localStorage.setItem("MYGIFOS", JSON.stringify(arrayMyGifos));
+                if(arrayMyGifos.length!=0){
+                    renderMy();
+                }
+                else{
+                    document.querySelector(".nomy").classList.remove("hidden");
+                    document.querySelector(".mycontainer").innerHTML="";
+                }
+            })
+            //DESCARGAR
+            favbtns[1].addEventListener("click", ()=>{
+                downloadGifo(arrayMyGifos[i].url, arrayMyGifos[i].title)
+            })
+            //MAXIMIZAR
+            favbtns[2].addEventListener("click", ()=>{
+                maxGifo(arrayMyGifos[i].url, arrayMyGifos[i].title, arrayMyGifos[i].author, mygifosSec)
+            })
+        }
+    }
+}
+renderMy();

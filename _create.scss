@@ -209,6 +209,12 @@
     color: $mainviolet;
 }
 
+.createmainbutton:hover{
+    background-color: $mainviolet;
+    // border: $mainviolet;
+    color: white;
+}
+
 .createoverlay{
     width: 100%;
     height: 100%;
@@ -231,39 +237,128 @@
     font-family: $mont;
     font-size: 15px;
     font-weight: 500;
+    text-align: center;
 }
 
-// .unseleclight{
-//     border: 1px solid $mainviolet;
-//     color: $mainviolet;
-//     background-color: white;
-// }
+.mygifossec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-// .unselecdark{
-//     border: 1px solid $backgrey;
-//     color: $backgrey;
-//     background-color: $darkbody;
-// }
+.mytitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-// .seleclight{
-//     border: 1px solid $mainviolet;
-//     color: white;
-//     background-color: $mainviolet;
-// }
+.mygifoslogo{
+    margin: 5px 0 7px 0;
+    width: 28px;
+}
 
-// .selecdark{
-//     border: 1px solid $backgrey;
-//     color: $darkbody;
-//     background-color: $backgrey;
-// }
+.mytitle h2{
+    font-family: $mont;
+    color: $mainviolet;
+    font-size: 20px;
+}
 
-// .darkcounter{
-//     // background-color: $backgrey;
-//     // color: $darkbody;
-//     color: red;
-// }
+.nomy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+}
 
-// .lightcounter{
-//     background-color:$mainviolet;
-//     color: white;
-// }
+.nomylogo{
+    margin: 90px 0 20px 0;
+    width: 130px;
+}
+
+.nomy h3{
+    font-family: $mont;
+    font-size: 18px;
+    color: $maingreen;
+    width: 70%;
+    text-align: center;
+}
+
+.mycontainer{
+    padding: 46px 0 78px 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mydiv{
+    display: inline;
+    position: relative;
+    width: fit-content;
+    margin: 12px;
+}
+
+.mydiv img{
+    width: 156px;
+    height: 120px;
+}
+
+.overlayfavbuttons{
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+}
+
+.overlayfavbuttons img{
+    width: 28px;
+    height: auto;
+    margin-right: 8px;
+}
+
+@media screen and (min-width: 769px){
+    .mygifoslogo{
+        margin: 11px 0 8px 0;
+    }
+    .mytitle h2{
+        font-size: 25px;
+    }
+    .nomy{
+        margin-bottom: 137px;
+    }
+
+    .nomylogo{
+        margin: 109px 0 24px 0;
+        width: 150px;
+    }
+    .nomy h3{
+        font-size: 22px;
+        width: 431px;
+    }
+
+    .mycontainer{
+        padding: 45px 143px 64px 143px;
+    }
+    
+    .mydiv{
+        margin: 14px;
+    }
+    
+    .mydiv img{
+        width: 260px;
+        height: 200px;
+    }
+    
+    .overlayfavbuttons{
+        margin-top: 10px;
+    }
+    
+    .overlayfavbuttons img{
+        width: 32px;
+        height: auto;
+        margin-right: 11px;
+    }
+}
+
+.hidden{
+    display: none;
+}

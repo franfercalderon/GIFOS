@@ -109,23 +109,32 @@ body.dark .center{
 body.dark .centertextcontainer p{
     color: $backgrey;
 }
-// body.dark .countercont div{
-//     color: $backgrey;
-//     border: 1px solid $backgrey;
-//     // color: red;
-//     // border: 1px solid red;
-// }
 
 body.dark .counterdiv{
     color: $backgrey;
     border: 1px solid $backgrey;
 }
 
-body.dark .unseleclight{
-    border: 1px solid $backgrey;
-    color: $backgrey;
-    background-color: $darkbody;
+body.dark .buttonsline{
+    background-color: $maingrey;
 }
+
+body.dark .createmainbutton{
+    border: 1px solid $backgrey;
+    background-color: $darkbody;
+    color: $backgrey;
+}
+
+body.dark .createmainbutton:hover{
+    background-color: $backgrey;
+    border: $backgrey;
+    color: $darkbody;
+}
+
+body.dark .mytitle h2{
+    color: $backgrey;
+}
+
 
 
 
