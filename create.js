@@ -40,11 +40,25 @@ function firstStep(){
     // document.querySelector(".countercont div:first-child").style.background="#572EE5";
     // document.querySelector(".countercont div:first-child").style.color="white";
     if(darkStatus==true){
-        counterbtns[0].classList.add("darkcounter");
+
+        //COLORES
+        // $mainviolet: #572EE5;
+        // $backgrey: #F3F5F8;
+        // $darkbody: #37383C;
+        ///
+        document.querySelector(".countercont div:first-child").style.background="#F3F5F8";
+        document.querySelector(".countercont div:first-child").style.color="#37383C";
+        // console.log("darkcounter pos 0")
+        // counterbtns[0].classList.remove("unseleclight");
+        // counterbtns[0].classList.add("selecdark");
         // document.querySelector(".countercont div:first-child").classList.add(".darkcounter");
     }
     else{
-        counterbtns[0].classList.add("lightcounter");
+        document.querySelector(".countercont div:first-child").style.background="#572EE5";
+        document.querySelector(".countercont div:first-child").style.color="white";
+
+        // counterbtns[0].classList.remove("unseleclight");
+        // counterbtns[0].classList.add("seleclight");
     }
     StartBtn.innerHTML="OK";
     StartBtn.style.width="60px";
@@ -54,16 +68,18 @@ function firstStep(){
 }
 
 async function getCam(){
-    //CAMBIA BOTONES
+    //CAMBIA BOTONES SEGUN DARK MODE
     if(darkStatus==true){
-        counterbtns[0].style.background="white";
-        counterbtns[0].style.color="#572EE5";
-        counterbtns[1].classList.add("darkcounter");
+        document.querySelector(".countercont div:first-child").style.background="#37383C";
+        document.querySelector(".countercont div:first-child").style.color="#F3F5F8";
+        document.querySelector(".countercont div:nth-child(2)").style.background="#F3F5F8";
+        document.querySelector(".countercont div:nth-child(2)").style.color="#37383C";
     }
     else{
-        counterbtns[0].style.background="white";
-        counterbtns[0].style.color="#572EE5";
-        counterbtns[1].classList.add("lightcounter")
+        document.querySelector(".countercont div:first-child").style.background="white";
+        document.querySelector(".countercont div:first-child").style.color="572EE5";
+        document.querySelector(".countercont div:nth-child(2)").style.background="#572EE5";
+        document.querySelector(".countercont div:nth-child(2)").style.color="white";
     }
     var video= document.createElement("video");
     await navigator.mediaDevices.getUserMedia({
@@ -89,10 +105,18 @@ async function getCam(){
                 StartBtn.addEventListener("click", ()=>{
                     //AL CLICKEAR FINALIZAR
                     //CAMBIA BOTONES
-                    document.querySelector(".countercont div:nth-child(2)").style.background="white";
-                    document.querySelector(".countercont div:nth-child(2)").style.color="#572EE5";
-                    document.querySelector(".countercont div:nth-child(3)").style.background="#572EE5";
-                    document.querySelector(".countercont div:nth-child(3)").style.color="white";
+                    if(darkStatus==true){
+                        document.querySelector(".countercont div:nth-child(2)").style.background="#37383C";
+                        document.querySelector(".countercont div:nth-child(2)").style.color="#F3F5F8";
+                        document.querySelector(".countercont div:nth-child(3)").style.background="#F3F5F8";
+                        document.querySelector(".countercont div:nth-child(3)").style.color="#37383C";
+                    }
+                    else{
+                        document.querySelector(".countercont div:nth-child(2)").style.background="white";
+                        document.querySelector(".countercont div:nth-child(2)").style.color="#572EE5";
+                        document.querySelector(".countercont div:nth-child(3)").style.background="#572EE5";
+                        document.querySelector(".countercont div:nth-child(3)").style.color="white";
+                    }
                     //ESCONDE BOTON
                     StartBtn.style.display="none";
                     //GENERA DIV OVERLAY Y ELEMENTOS

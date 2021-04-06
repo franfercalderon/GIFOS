@@ -126,9 +126,15 @@ body.dark .centertextcontainer p {
   color: #F3F5F8;
 }
 
-body.dark .countercont div {
+body.dark .counterdiv {
   color: #F3F5F8;
   border: 1px solid #F3F5F8;
+}
+
+body.dark .unseleclight {
+  border: 1px solid #F3F5F8;
+  color: #F3F5F8;
+  background-color: #37383C;
 }
 
 .header {
@@ -1492,15 +1498,5 @@ footer {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: 500;
-}
-
-.darkcounter {
-  background-color: #F3F5F8;
-  color: #37383C;
-}
-
-.lightcounter {
-  background-color: #572EE5;
-  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

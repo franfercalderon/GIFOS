@@ -43,8 +43,7 @@ function enableDark(){
         // document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
 
         document.querySelector(".favbtndesktop").style.color="white";
-
-
+        document.querySelector(".mygifosbtndesktop").style.color="white";
         
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
@@ -66,6 +65,8 @@ function enableDark(){
         newGifoBtnHover.src=newLogo.src;
         
         document.querySelector(".favbtndesktop").style.color="#572EE5";
+        document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
         //LOCALSTORAGE
@@ -150,9 +151,11 @@ function openMain(){
     //CHEQUEA MODO NOCTURNO 
     if(darkStatus==true){
         document.querySelector(".favbtndesktop").style.color="white";
+        document.querySelector(".mygifosbtndesktop").style.color="white";
     }
     else{
         document.querySelector(".favbtndesktop").style.color="#572EE5";
+        document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
     }
 
 }

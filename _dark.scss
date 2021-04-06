@@ -109,9 +109,22 @@ body.dark .center{
 body.dark .centertextcontainer p{
     color: $backgrey;
 }
-body.dark .countercont div{
+// body.dark .countercont div{
+//     color: $backgrey;
+//     border: 1px solid $backgrey;
+//     // color: red;
+//     // border: 1px solid red;
+// }
+
+body.dark .counterdiv{
     color: $backgrey;
     border: 1px solid $backgrey;
+}
+
+body.dark .unseleclight{
+    border: 1px solid $backgrey;
+    color: $backgrey;
+    background-color: $darkbody;
 }
 
 
