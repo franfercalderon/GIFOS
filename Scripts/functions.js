@@ -170,7 +170,7 @@ function openMain(){
     else{
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
-        document.querySelector("newGifoBtn").src="images/assets/CTA-crear-gifo-modo-noc.svg"
+        document.querySelector(".newGifoBtn").src="images/assets/CTA-crear-gifo-modo-noc.svg"
     }
 
 }
