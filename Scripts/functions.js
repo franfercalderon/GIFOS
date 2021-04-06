@@ -159,15 +159,18 @@ function openMain(){
     favSec.classList.add("hidden");
     mygifosSec.classList.add("hidden");
     maxSec.classList.add("hidden");
+    createSec.classList.add("hidden");
     favOpen=false;
     //CHEQUEA MODO NOCTURNO 
     if(darkStatus==true){
         document.querySelector(".favbtndesktop").style.color="white";
         document.querySelector(".mygifosbtndesktop").style.color="white";
+        document.querySelector("newGifoBtn").src="images/assets/button-crear-gifo.svg"
     }
     else{
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+        document.querySelector("newGifoBtn").src="images/assets/CTA-crear-gifo-modo-noc.svg"
     }
 
 }
