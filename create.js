@@ -7,7 +7,9 @@ function openCreate(){
         mygifosSec.classList.add("hidden");
         createSec.classList.remove("hidden");
         newLogo.src="images/assets/CTA-crear-gifo-active.svg";
+        
         createOpen=true;
+        
     }
     else{
         mainSec.classList.remove("hidden");
@@ -20,35 +22,49 @@ function openCreate(){
         else{
             newLogo.src= "./images/assets/CTA-crear-gifo-modo-noc.svg";
         }
+        
     }
 }
+
+var counterbtns= document.querySelectorAll(".countercont div");
 
 StartBtn.addEventListener("click", firstStep, {once: true});
 
 function firstStep(){
     StartBtn.removeEventListener("click", firstStep);
+
     //CAMBIA BOTONES
     document.querySelector(".centertextcontainer p").innerHTML= "¿Nos das acceso a tu cámara?";
     document.querySelector(".centertextcontainer p:nth-child(2)").innerHTML="El acceso a tu cámara será válido sólo";
     document.querySelector(".centertextcontainer p:nth-child(3)").innerHTML="por el tiempo en el que estés creando el GIFO.";
-    document.querySelector(".countercont div:first-child").style.background="#572EE5";
-    document.querySelector(".countercont div:first-child").style.color="white";
+    // document.querySelector(".countercont div:first-child").style.background="#572EE5";
+    // document.querySelector(".countercont div:first-child").style.color="white";
+    if(darkStatus==true){
+        counterbtns[0].classList.add("darkcounter");
+        // document.querySelector(".countercont div:first-child").classList.add(".darkcounter");
+    }
+    else{
+        counterbtns[0].classList.add("lightcounter");
+    }
     StartBtn.innerHTML="OK";
     StartBtn.style.width="60px";
     StartBtn.addEventListener("click", ()=>{
         getCam();
     }, {once:true});
-////////////SEGUIR CAMBIANDO ESTILO DEL BOTON STARTBTN PARA QUE DIGA OK Y AGREGAR ADDEVENT PARA QUE EJECUTE GETCAM()
-    // getCam();
-
 }
 
 async function getCam(){
     //CAMBIA BOTONES
-    document.querySelector(".countercont div:first-child").style.background="white";
-    document.querySelector(".countercont div:first-child").style.color="#572EE5";
-    document.querySelector(".countercont div:nth-child(2)").style.background="#572EE5";
-    document.querySelector(".countercont div:nth-child(2)").style.color="white";
+    if(darkStatus==true){
+        counterbtns[0].style.background="white";
+        counterbtns[0].style.color="#572EE5";
+        counterbtns[1].classList.add("darkcounter");
+    }
+    else{
+        counterbtns[0].style.background="white";
+        counterbtns[0].style.color="#572EE5";
+        counterbtns[1].classList.add("lightcounter")
+    }
     var video= document.createElement("video");
     await navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -170,11 +186,43 @@ function openMyGifos(origin){
         maxSec.classList.add("hidden");
         mygifosSec.classList.remove("hidden");
         createSec.classList.add("hidden");
-        favSec.classList.add("hidden")
+        favSec.classList.add("hidden");
+        trendingSec.classList.remove("hidden")
         origin;
+        document.querySelector(".mygifosbtndesktop").style.color="#9CAFC3";
+        if(createOpen==true){
+            if(darkStatus==false){
+                newLogo.src= "./images/assets/button-crear-gifo.svg";
+            }
+            else{
+                newLogo.src= "./images/assets/CTA-crear-gifo-modo-noc.svg";
+            }
+        }
+        else if(favOpen==true){
+            if(darkStatus==false){
+                document.querySelector(".favbtndesktop").style.color="#572EE5";
+            }
+            else{
+                document.querySelector(".favbtndesktop").style.color="#9CAFC3";
+            }
+        }
+        //ACTUALIZA GIFOSOPEN STATUS
         myGifosOpen=true;
     }
-    // else{
+    else{
+        mainSec.classList.remove("hidden");
 
-    // }
+        mygifosSec.classList.add("hidden");
+
+        if(darkStatus==true){
+            document.querySelector(".mygifosbtndesktop").style.color="white";
+        }
+        else{
+            document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+        }
+        //ACTUALIZA GIFOSOPEN STATUS
+        myGifosOpen=false;
+
+
+    }
 }

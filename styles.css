@@ -110,6 +110,27 @@ body.dark .viewmore:active {
   color: #37383C;
 }
 
+body.dark .favbtndesktop {
+  color: #F3F5F8;
+}
+
+body.dark .mygifosbtndesktop {
+  color: #F3F5F8;
+}
+
+body.dark .center {
+  border: 1px solid #F3F5F8;
+}
+
+body.dark .centertextcontainer p {
+  color: #F3F5F8;
+}
+
+body.dark .countercont div {
+  color: #F3F5F8;
+  border: 1px solid #F3F5F8;
+}
+
 .header {
   position: relative;
   display: -webkit-box;
@@ -1471,5 +1492,15 @@ footer {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: 500;
+}
+
+.darkcounter {
+  background-color: #F3F5F8;
+  color: #37383C;
+}
+
+.lightcounter {
+  background-color: #572EE5;
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

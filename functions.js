@@ -40,10 +40,15 @@ function enableDark(){
         searchBar.style.borderBottom="1px solid white";
         newGifoBtnHover.src="images/assets/CTA-crear-gifo-active.svg";
 
+        // document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+
         document.querySelector(".favbtndesktop").style.color="white";
+
+
         
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=true;
+        //LOCALSTORAGE
         localStorage.setItem("DARKSTATUS", "true");
     }else{
         console.log("Sun is up!");
@@ -63,6 +68,7 @@ function enableDark(){
         document.querySelector(".favbtndesktop").style.color="#572EE5";
         //ACTUALIZA VALOR DEL DARKSTATUS
         darkStatus=false;
+        //LOCALSTORAGE
         localStorage.setItem("DARKSTATUS", "false");
     }
 }
@@ -74,18 +80,6 @@ function isItDark(){
     }
 }
 isItDark();
-
-// if(localStorage.hasOwnProperty("DARKSTATUS")){
-//     darkStatus=JSON.parse(localStorage.getItem("DARKSTATUS"));
-//     if(darkStatus==true){
-//         enableDark();
-//     }
-// }
-// localStorage.setItem("FAVGIFS", JSON.stringify(favArray));
-
-// f(localStorage.hasOwnProperty("FAVGIFS")){
-//     favArray=JSON.parse(localStorage.getItem("FAVGIFS"))
-// }
 
 //  MOSTRAR SECTION FAVORITOS
 function openFavSec(){
@@ -107,9 +101,26 @@ function openFavSec(){
         if(darkStatus==false){
             menuBtn.src="./images/assets/burger.svg";
             document.querySelector(".favbtndesktop").style.color="#9CAFC3";
+            if(myGifosOpen==true){
+                document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
+            }
         }else{
             menuBtn.src="./images/assets/burgerdark.svg";
+            document.querySelector(".favbtndesktop").style.color="#9CAFC3";
+            if(myGifosOpen==false){
+                document.querySelector(".mygifosbtndesktop").style.color="white";
+            }
         }
+
+        // if(createOpen==true){
+        //     if(darkStatus==false){
+        //         newLogo.src= "./images/assets/button-crear-gifo.svg";
+        //     }
+        //     else{
+        //         newLogo.src= "./images/assets/CTA-crear-gifo-modo-noc.svg";
+        //     }
+        // }
+
         favOpen=true;
     }
     else{
