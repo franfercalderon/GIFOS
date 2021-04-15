@@ -313,15 +313,14 @@ function fillSearchSuggestions(array){
             else{
                 li.innerHTML=`<img src="images/assets/icon-search-mod-noc.svg" class="limagnifier"><p>${array[i].title}</p>`
             }
-            
+          
             autocompleteUL.appendChild(li);
             li.addEventListener("click", ()=>{
+                //LANZA LA BUSQUEDA Y ESCONDE SUGRENCIAS
                 searchBar.value= array[i].title;
-
                 hideSearch();
                 doSearch(); 
                 searchResults.scrollIntoView();
-
             })
 
             iterations=0;

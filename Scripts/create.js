@@ -154,6 +154,7 @@ async function getCam(){
                                         console.log(mynewgifo);
                                         arrayMyGifos.push(mynewgifo);
                                         localStorage.setItem("MYGIFOS", JSON.stringify(arrayMyGifos));
+                                        renderMy();
                                     })
                                     createoverlay.querySelector("img").src="images/assets/ok.svg";
                                     createoverlay.querySelector("p").innerHTML= "GIFO subido con éxito!<br>\Te dirigiremos a la sección de tus GIFOS!";
@@ -208,9 +209,11 @@ function MYGIFO(index, author, title, url){
 function openMyGifos(origin){
     
     if(myGifosOpen==false){
+        // console.log("antes");
+        // retrieveMyGifos();
+        // console.log("despues");
         mainSec.classList.add("hidden");
         searchResults.classList.add("hidden");
-        // maxSec.classList.add("hidden");
         mygifosSec.classList.remove("hidden");
         createSec.classList.add("hidden");
         favSec.classList.add("hidden");

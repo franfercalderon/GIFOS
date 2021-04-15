@@ -94,8 +94,3 @@ function renderFavs(){
 }
 renderFavs();
 
-function eraseAllFavs(){
-    favArray=[];
-    localStorage.setItem("FAVGIFS", JSON.stringify(favArray))
-}
-// eraseAllFavs();
