@@ -220,6 +220,7 @@ leftArrow.addEventListener("mouseleave", ()=>{
 })
 
 rightArrow.addEventListener("mouseover", ()=>{
+    console.log("cambia")
     rightArrow.src="images/assets/button-slider-right-hover.svg";
 });
 

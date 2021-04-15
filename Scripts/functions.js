@@ -172,7 +172,6 @@ function openMain(){
         document.querySelector(".mygifosbtndesktop").style.color="#572EE5";
         document.querySelector(".newGifoBtn").src="images/assets/CTA-crear-gifo-modo-noc.svg"
     }
-
 }
 
 function fillTags(array){
@@ -281,6 +280,8 @@ function hideSearch(){
         searchBar.style.borderBottom= "1pt solid #572EE5";
     }
     autocompletecontainer.classList.add("hidden");
+    // searchBar.value="";
+
 }
 
 function fillSearchSuggestions(array){
@@ -300,6 +301,7 @@ function fillSearchSuggestions(array){
         closeSearch.style.zIndex= "2";
         closeSearch.addEventListener("click", ()=>{
             hideSearch();
+            searchBar.value="";
         })
         mainTrending.classList.add("hidden");
         //GENERA LI EN LA UL CON EL ARRAY DE RESULTADOS OBTENIDO DE LA API
@@ -315,7 +317,11 @@ function fillSearchSuggestions(array){
             autocompleteUL.appendChild(li);
             li.addEventListener("click", ()=>{
                 searchBar.value= array[i].title;
+
                 hideSearch();
+                doSearch(); 
+                searchResults.scrollIntoView();
+
             })
 
             iterations=0;
