@@ -39,28 +39,16 @@ function firstStep(){
     document.querySelector(".centertextcontainer p").innerHTML= "¿Nos das acceso a tu cámara?";
     document.querySelector(".centertextcontainer p:nth-child(2)").innerHTML="El acceso a tu cámara será válido sólo";
     document.querySelector(".centertextcontainer p:nth-child(3)").innerHTML="por el tiempo en el que estés creando el GIFO.";
-    // document.querySelector(".countercont div:first-child").style.background="#572EE5";
-    // document.querySelector(".countercont div:first-child").style.color="white";
+
     if(darkStatus==true){
 
-        //COLORES
-        // $mainviolet: #572EE5;
-        // $backgrey: #F3F5F8;
-        // $darkbody: #37383C;
-        ///
         document.querySelector(".countercont div:first-child").style.background="#F3F5F8";
         document.querySelector(".countercont div:first-child").style.color="#37383C";
-        // console.log("darkcounter pos 0")
-        // counterbtns[0].classList.remove("unseleclight");
-        // counterbtns[0].classList.add("selecdark");
-        // document.querySelector(".countercont div:first-child").classList.add(".darkcounter");
     }
     else{
         document.querySelector(".countercont div:first-child").style.background="#572EE5";
         document.querySelector(".countercont div:first-child").style.color="white";
 
-        // counterbtns[0].classList.remove("unseleclight");
-        // counterbtns[0].classList.add("seleclight");
     }
     StartBtn.innerHTML="OK";
     StartBtn.style.width="60px";
@@ -144,8 +132,6 @@ async function getCam(){
                                 return res.json()
                             })
                             .then(ans=>{
-                                console.log("result")
-                                console.log(ans)
                                 fetch(`https://api.giphy.com/v1/gifs?ids=${ans.data.id}&api_key=${apiKey}`)
                                     .then(res=> res.json())
                                     .then(gifox=>{
@@ -209,9 +195,6 @@ function MYGIFO(index, author, title, url){
 function openMyGifos(origin){
     
     if(myGifosOpen==false){
-        // console.log("antes");
-        // retrieveMyGifos();
-        // console.log("despues");
         mainSec.classList.add("hidden");
         searchResults.classList.add("hidden");
         mygifosSec.classList.remove("hidden");
